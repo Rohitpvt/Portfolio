@@ -158,27 +158,31 @@ async function loadCertificatesAndProjects() {
         // 6. Render Tech Stack (Categorized Bento Cards)
         const techStackContainer = document.getElementById('tech-stack-container');
         const categoryIcons = {
-          "Programming Languages": "code-slash-outline",
-          "AI & ML": "brain-outline",
-          "Databases": "database-outline",
-          "Web Development": "globe-outline",
-          "Mobile Development": "phone-portrait-outline"
+          "programming languages": "code-slash-outline",
+          "ai & ml": "brain-outline",
+          "databases": "database-outline",
+          "web development": "globe-outline",
+          "mobile development": "phone-portrait-outline"
         };
 
         if (techStackContainer && data.tech_stack) {
-          techStackContainer.innerHTML = Object.entries(data.tech_stack).map(([category, skills]) => `
-            <div class="tech-category">
-              <div class="category-header">
-                <ion-icon name="${categoryIcons[category] || 'extension-puzzle-outline'}"></ion-icon>
-                <h4 class="h4 category-title">${category}</h4>
+          techStackContainer.innerHTML = Object.entries(data.tech_stack).map(([category, skills]) => {
+            const iconName = categoryIcons[category.toLowerCase().trim()] || 'cube-outline';
+            return `
+              <div class="tech-category">
+                <div class="category-header">
+                  <ion-icon name="${iconName}"></ion-icon>
+                  <h4 class="h4 category-title">${category}</h4>
+                </div>
+                <div class="tech-list">
+                  ${skills.map(skill => `<span class="tech-item">${skill}</span>`).join('')}
+                </div>
               </div>
-              <div class="tech-list">
-                ${skills.map(skill => `<span class="tech-item">${skill}</span>`).join('')}
-              </div>
-            </div>
-          `).join('');
+            `;
+          }).join('');
         }
       });
+
 
 
 
