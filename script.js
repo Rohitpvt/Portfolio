@@ -139,21 +139,28 @@ async function loadCertificatesAndProjects() {
           });
         }
 
-        // 5. Render Skills (Proficiency Bars)
+        // 5. Render Skills (Interactive Card Grid)
         const skillsList = document.getElementById('skills-list');
         if (skillsList && data.skills_proficiency) {
+          skillsList.classList.add('skills-grid');
           skillsList.innerHTML = data.skills_proficiency.map(skill => `
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">${skill.name}</h5>
-                <data value="${skill.value}">${skill.value}%</data>
+            <li class="skill-card-item content-card">
+              <div class="skill-card-icon">
+                <img src="${skill.icon || './images/icon-dev.png'}" alt="${skill.name}" width="40">
               </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" data-skill-value="${skill.value}" style="width: 0%"></div>
+              <div class="skill-card-content">
+                <div class="title-wrapper">
+                  <h5 class="h5">${skill.name}</h5>
+                  <data value="${skill.value}">${skill.value}%</data>
+                </div>
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" data-skill-value="${skill.value}" style="width: 0%"></div>
+                </div>
               </div>
             </li>
           `).join('');
         }
+
 
         // 6. Render Tech Stack (Categorized Bento Cards)
         const techStackContainer = document.getElementById('tech-stack-container');
