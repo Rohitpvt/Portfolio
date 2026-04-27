@@ -510,82 +510,9 @@ article.active section:nth-of-type(3) { animation-delay: 0.4s; }
   margin: 10px;
 }
 
-.github-stats {
-  margin-top: 35px;
+.skeleton-text.short {
+  width: 40%;
 }
-
-#github-stats-container {
-  padding: 30px;
-}
-
-.github-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  text-align: center;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.stat-item ion-icon {
-  font-size: 2.5rem;
-  color: var(--orange-yellow-crayola);
-  opacity: 0.8;
-}
-
-.stat-value {
-  display: block;
-  font-size: var(--fs-2);
-  font-weight: var(--fw-bold);
-  color: var(--white-2);
-  letter-spacing: -0.02em;
-}
-
-.stat-label {
-  display: block;
-  font-size: var(--fs-8);
-  color: var(--light-gray-70);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.github-footer {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.github-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  background: hsla(240, 5%, 20%, 0.4);
-  border: 1px solid var(--jet);
-  border-radius: 12px;
-  color: var(--white-2);
-  font-weight: var(--fw-semi);
-  transition: all 0.3s ease;
-}
-
-.github-link:hover {
-  background: var(--text-gradient-yellow);
-  color: #000;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 580px) {
-  .github-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 15px;
-  }
-}
-
 
 
 /*-----------------------------------*\
