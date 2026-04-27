@@ -566,6 +566,43 @@ main {
   #SIDEBAR
 \*-----------------------------------*/
 
+.sidebar,
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar::before,
+.main-content::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0%,
+    transparent 20%,
+    var(--orange-yellow-crayola) 25%,
+    transparent 30%,
+    transparent 100%
+  );
+  border-radius: inherit;
+  animation: borderBeam 4s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Masking to only show the border edge */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  padding: 1.5px;
+}
+
+@keyframes borderBeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
