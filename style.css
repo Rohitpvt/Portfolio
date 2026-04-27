@@ -912,6 +912,64 @@ main {
 }
 
 /**
+ * #tech-stack
+ */
+
+.tech-stack {
+  margin-bottom: 35px;
+}
+
+.tech-stack-title {
+  margin-bottom: 25px;
+}
+
+.tech-stack-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.tech-category {
+  background: hsla(240, 5%, 12%, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+  box-shadow: var(--shadow-1);
+}
+
+.category-title {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  margin-bottom: 15px;
+  font-weight: var(--fw-600);
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-chip {
+  background: var(--onyx);
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--jet);
+  transition: all 0.3s ease;
+}
+
+.tech-chip:hover {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/**
  * #testimonials
  */
 

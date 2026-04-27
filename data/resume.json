@@ -33,14 +33,19 @@
       "details": "• Designed GUI using CustomTkinter.\n• Implemented voice command recognition and text-to-speech.\n• Integrated DALL-E and Gemini Pro for dynamic AI responses and image generation.\n• Optimized codebase for low latency response."
     }
   ],
-  "skills": [
+  "skills_proficiency": [
     { "name": "Python", "value": 95 },
-    { "name": "C++", "value": 75 },
-    { "name": "React", "value": 80 },
-    { "name": "MySQL", "value": 80 },
+    { "name": "React", "value": 85 },
+    { "name": "JavaScript", "value": 80 },
     { "name": "Flutter/Dart", "value": 85 },
-    { "name": "Java", "value": 40 },
-    { "name": "JavaScript", "value": 70 },
-    { "name": "Node.js", "value": 75 }
-  ]
+    { "name": "Node.js", "value": 75 },
+    { "name": "MySQL", "value": 80 }
+  ],
+  "tech_stack": {
+    "Programming Languages": ["Python", "C++", "Java", "JavaScript"],
+    "AI & ML": ["OpenAI API", "Google Gemini", "NLP", "AI Image Generation"],
+    "Databases": ["Firebase", "MongoDB", "MySQL"],
+    "Web Development": ["HTML", "CSS", "React", "Node.js"],
+    "Mobile Development": ["Flutter", "Dart"]
+  }
 }

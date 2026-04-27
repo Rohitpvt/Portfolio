@@ -139,9 +139,10 @@ async function loadCertificatesAndProjects() {
           });
         }
 
+        // 5. Render Skills (Proficiency Bars)
         const skillsList = document.getElementById('skills-list');
-        if (skillsList && data.skills) {
-          skillsList.innerHTML = data.skills.map(skill => `
+        if (skillsList && data.skills_proficiency) {
+          skillsList.innerHTML = data.skills_proficiency.map(skill => `
             <li class="skills-item">
               <div class="title-wrapper">
                 <h5 class="h5">${skill.name}</h5>
@@ -153,7 +154,21 @@ async function loadCertificatesAndProjects() {
             </li>
           `).join('');
         }
+
+        // 6. Render Tech Stack (Categorized Chips)
+        const techStackContainer = document.getElementById('tech-stack-container');
+        if (techStackContainer && data.tech_stack) {
+          techStackContainer.innerHTML = Object.entries(data.tech_stack).map(([category, skills]) => `
+            <div class="tech-category">
+              <h4 class="h4 category-title">${category}</h4>
+              <div class="tech-chips">
+                ${skills.map(skill => `<span class="tech-chip">${skill}</span>`).join('')}
+              </div>
+            </div>
+          `).join('');
+        }
       });
+
 
 
 
