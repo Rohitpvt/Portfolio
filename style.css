@@ -1180,22 +1180,25 @@ main {
 .clients-list {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
+  align-items: center;
+  gap: 50px;
   margin: 0 -15px;
   padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.clients-list:active {
+  cursor: grabbing;
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+  min-width: 150px;
+  flex-shrink: 0;
 }
+
 
 .clients-item img {
   width: 100px;

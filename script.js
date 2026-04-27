@@ -657,6 +657,68 @@ const closeResumeModal = function () {
 resumeModalCloseBtn?.addEventListener('click', closeResumeModal);
 resumeOverlay?.addEventListener('click', closeResumeModal);
 
+/**
+ * Skills Logo Marquee
+ */
+function initSkillsMarquee() {
+  const marquee = document.querySelector(".clients-list");
+  if (!marquee) return;
+
+  // Duplicate items for seamless loop
+  const items = marquee.innerHTML;
+  marquee.innerHTML += items + items; // Triple for safety in large viewports
+
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+  let animationId;
+  let scrollPos = 0;
+  const speed = 0.5; // Very slow speed
+  let isHovered = false;
+
+  const startAnimation = () => {
+    if (!isDragging && !isHovered) {
+      scrollPos += speed;
+      if (scrollPos >= marquee.scrollWidth / 3) {
+        scrollPos = 0;
+      }
+      marquee.scrollLeft = scrollPos;
+    }
+    animationId = requestAnimationFrame(startAnimation);
+  };
+
+  marquee.addEventListener("mouseenter", () => isHovered = true);
+  marquee.addEventListener("mouseleave", () => {
+    isHovered = false;
+    isDragging = false;
+  });
+
+  // Drag Support
+  marquee.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX - marquee.offsetLeft;
+    scrollLeft = marquee.scrollLeft;
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  marquee.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - marquee.offsetLeft;
+    const walk = (x - startX) * 2;
+    marquee.scrollLeft = scrollLeft - walk;
+    scrollPos = marquee.scrollLeft;
+  });
+
+  // Start the engine
+  startAnimation();
+}
+
+initSkillsMarquee();
+
 
 
 
