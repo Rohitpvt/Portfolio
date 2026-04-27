@@ -1,65 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohit's Portfolio</title>
-
-    <!--
-    - favicon
-  -->
+    <title>Thank You - Rohit's Portfolio</title>
     <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background: hsl(0, 0%, 7%);
-        color: hsl(0, 0%, 98%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .container {
-        text-align: center;
-        padding: 2rem;
-        background: hsl(240, 2%, 12%);
-        border-radius: 20px;
-        box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-      }
-      .success-icon {
-        font-size: 4rem;
-        color: hsl(45, 100%, 72%);
-        margin-bottom: 1rem;
-      }
-      h1 {
-        color: hsl(45, 100%, 72%);
-        margin-bottom: 1rem;
-        font-size: 45px;
-      }
-      a {
-        color: hsl(45, 100%, 72%);
-        text-decoration: none;
-        padding: 10px 20px;
-        border: 2px solid hsl(45, 100%, 72%);
-        border-radius: 10px;
-        display: inline-block;
-        margin-top: 1rem;
-        transition: all 0.3s ease;
-      }
-      a:hover {
-        background: hsl(45, 100%, 72%);
-        color: hsl(0, 0%, 7%);
-      }
+        :root {
+            --orange-yellow-crayola: hsl(190, 100%, 55%);
+            --accent-secondary: hsl(280, 100%, 65%);
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050505;
+            color: #d6d6d6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .ambient-background {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0; overflow: hidden; pointer-events: none;
+        }
+        .glow {
+            position: absolute; width: 60vw; height: 60vw;
+            filter: blur(120px); opacity: 0.3; border-radius: 50%;
+            animation: float 20s ease-in-out infinite alternate;
+        }
+        .blob-1 { background: var(--orange-yellow-crayola); top: -10%; left: -10%; }
+        .blob-2 { background: var(--accent-secondary); bottom: -10%; right: -10%; animation-delay: -10s; }
+        @keyframes float {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(50px, 50px) scale(1.1); }
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem;
+            background: hsla(240, 5%, 8%, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 500px;
+            width: 90%;
+        }
+        .success-icon {
+            font-size: 5rem;
+            background: linear-gradient(to right, var(--orange-yellow-crayola), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-family: "Outfit", sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fafafa;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(to right, var(--orange-yellow-crayola), var(--accent-secondary));
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px hsla(190, 100%, 55%, 0.4);
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="success-icon">✓</div>
-      <h1>Thank You!</h1>
-      <p>Your message has been sent successfully. I'll get back to you soon!</p>
-      <a href="index.html">← Back to Portfolio</a>
+</head>
+<body>
+    <div class="ambient-background">
+        <div class="glow blob-1"></div>
+        <div class="glow blob-2"></div>
     </div>
-  </body>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <h1>Thank You!</h1>
+        <p>Your message has been received. I'll get back to you as soon as possible.</p>
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+</body>
 </html>
