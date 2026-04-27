@@ -575,10 +575,13 @@ main {
   display: block;
   border: 2px solid var(--white-1);
   content: url("./images/my-profile.jpg");
-  transition: transform 0.6s ease-in-out;
+  transform: scale(1.1);
+  transition: transform 0.6s ease-out;
   backface-visibility: hidden;
   will-change: transform;
+  pointer-events: none;
 }
+
 
 .avatar-box:hover img {
   animation: flipAndSwap 0.6s ease-in-out forwards;

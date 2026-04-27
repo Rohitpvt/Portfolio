@@ -486,5 +486,38 @@ function initParticles() {
 
 initParticles();
 
+/**
+ * Avatar Parallax Effect
+ */
+function initAvatarParallax() {
+  const avatarBox = document.querySelector(".avatar-box");
+  const avatarImg = avatarBox ? avatarBox.querySelector("img") : null;
+
+  if (!avatarBox || !avatarImg) return;
+
+  avatarBox.addEventListener("mousemove", (e) => {
+    const { width, height, left, top } = avatarBox.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+
+    // Movement intensity (lower is more subtle)
+    const xMove = (mouseX / (width / 2)) * 10;
+    const yMove = (mouseY / (height / 2)) * 10;
+
+    avatarImg.style.transform = `scale(1.2) translate(${xMove}px, ${yMove}px)`;
+    avatarImg.style.transition = "transform 0.1s ease-out";
+  });
+
+  avatarBox.addEventListener("mouseleave", () => {
+    avatarImg.style.transform = "scale(1.1) translate(0, 0)";
+    avatarImg.style.transition = "transform 0.6s ease-out";
+  });
+}
+
+initAvatarParallax();
+
+
 
 
