@@ -169,198 +169,371 @@
       -->
 
       <article class="about active" data-page="about">
-        <div class="skeleton-placeholder">
-          <div class="skeleton-title"></div>
-          <div class="skeleton-text"></div>
-          <div class="skeleton-text"></div>
-          <div class="skeleton-text short"></div>
-          <div class="service" style="margin-top: 30px;">
-            <ul class="service-list">
-              <li class="skeleton" style="height: 100px;"></li>
-              <li class="skeleton" style="height: 100px;"></li>
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am an aspiring software developer from Delhi, currently pursuing an MCA at Christ University. I enjoy
+            building secure,
+            user-centric digital solutions and working across both backend and frontend technologies.
+          </p>
+
+          <p>
+            During my internship at Corizo, I developed an online voting Android app using Flutter, Dart, and Firebase,
+            implementing
+            secure authentication, state-specific election features, and a robust backend. I have also built an AI
+            desktop assistant
+            in Python with voice activation, image generation, real-time search, and an engaging UI.
+          </p>
+
+          <p>
+            Skilled in Python, Go, and Dart, I hold certifications in AI, data analysis, web development, and
+            cybersecurity. I am
+            passionate about creating impactful products, staying updated with industry trends, and enjoy video editing
+            and
+            exploring new AI technologies.
+          </p>
+        </section>
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+          <h3 class="h3 service-title">What I'm doing</h3>
+
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-design.png" alt="AI Projects icon" width="40" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI Projects</h4>
+
+                <p class="service-item-text">
+                  Developing cutting-edge AI-powered solutions, including
+                  voice-activated desktop assistants integrating AI image
+                  generation and smart search tools.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-dev.png" alt="Web development icon" width="40" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+
+                <p class="service-item-text">
+                  Building modern, responsive websites using Python, HTML,
+                  CSS, and various web technologies. Experienced in frontend development to deliver seamless digital
+                  experiences.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-app.png" alt="App Development icon" width="40" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">App Development</h4>
+
+                <p class="service-item-text">
+                  Designing and building secure, user-friendly Android
+                  applications with real-world impact. It includes an
+                  advanced Voting App utilizing Flutter, Dart, and Firebase.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-backend.png" alt="Backend Development icon" width="43" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Backend Development</h4>
+
+                <p class="service-item-text">
+                  Focused on backend development, building out robust APIs and server-side logics. Managing database
+                  architecture
+                  ensuring smooth data flow is the main priority right now.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-data.png" alt="Database Manager icon" width="35" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Database Manager</h4>
+
+                <p class="service-item-text">
+                  Structuring and optimizing databases for reliable
+                  performance, secure data handling, and scalable access
+                  across applications.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./images/icon-poster.png" alt="Poster Making icon" width="26" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Poster Making</h4>
+
+                <p class="service-item-text">
+                  Designing clean, impactful posters that communicate key
+                  messages at a glance with strong typography and brand
+                  consistency.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!--
+          - testimonials
+        -->
+        <!--
+          <section class="testimonials">
+            <h3 class="h3 testimonials-title">Testimonials</h3>
+
+            <ul class="testimonials-list has-scrollbar">
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./images/avatar-1.png"
+                      alt="Daniel lewis"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Daniel lewis
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Richard was hired to create a corporate identity. We were
+                      very pleased with the work done. She has a lot of
+                      experience and is very concerned about the needs of
+                      client. Lorem ipsum dolor sit amet, ullamcous cididt
+                      consectetur adipiscing elit, seds do et eiusmod tempor
+                      incididunt ut laborels dolore magnarels alia.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./images/avatar-2.png"
+                      alt="Jessica miller"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Jessica miller
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Richard was hired to create a corporate identity. We were
+                      very pleased with the work done. She has a lot of
+                      experience and is very concerned about the needs of
+                      client. Lorem ipsum dolor sit amet, ullamcous cididt
+                      consectetur adipiscing elit, seds do et eiusmod tempor
+                      incididunt ut laborels dolore magnarels alia.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./images/avatar-3.png"
+                      alt="Emily evans"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Emily evans
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Richard was hired to create a corporate identity. We were
+                      very pleased with the work done. She has a lot of
+                      experience and is very concerned about the needs of
+                      client. Lorem ipsum dolor sit amet, ullamcous cididt
+                      consectetur adipiscing elit, seds do et eiusmod tempor
+                      incididunt ut laborels dolore magnarels alia.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./images/avatar-4.png"
+                      alt="Henry william"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Henry william
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Richard was hired to create a corporate identity. We were
+                      very pleased with the work done. She has a lot of
+                      experience and is very concerned about the needs of
+                      client. Lorem ipsum dolor sit amet, ullamcous cididt
+                      consectetur adipiscing elit, seds do et eiusmod tempor
+                      incididunt ut laborels dolore magnarels alia.
+                    </p>
+                  </div>
+                </div>
+              </li>
             </ul>
-          </div>
+          </section>
+          -->
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <!--
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img
+                    src="./images/avatar-1.png"
+                    alt="Daniel lewis"
+                    width="80"
+                    data-modal-img
+                  />
+                </figure>
+
+                <img src="./images/icon-quote.png" alt="quote icon" />
+              </div>
+              -->
+            <div class="modal-content">
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <!--
+                  <p>
+                    Richard was hired to create a corporate identity. We were
+                    very pleased with the work done. She has a lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum
+                    dolor sit amet, ullamcous cididt consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels
+                    dolore magnarels alia.
+                  </p>
+                  -->
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div class="article-content">
-          <header>
-            <h2 class="h2 article-title">About me</h2>
-          </header>
+        <!--
+          - skills
+        -->
 
-          <section class="about-text">
-            <p>
-              I am an aspiring software developer from Delhi, currently pursuing an MCA at Christ University. I enjoy
-              building secure,
-              user-centric digital solutions and working across both backend and frontend technologies.
-            </p>
+        <section class="clients">
+          <h3 class="h3 clients-title">Skills</h3>
 
-            <p>
-              During my internship at Corizo, I developed an online voting Android app using Flutter, Dart, and Firebase,
-              implementing
-              secure authentication, state-specific election features, and a robust backend. I have also built an AI
-              desktop assistant
-              in Python with voice activation, image generation, real-time search, and an engaging UI.
-            </p>
+          <ul class="clients-list has-scrollbar">
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/python.png" alt="client logo" />
+              </a>
+            </li>
 
-            <p>
-              Skilled in Python, Go, and Dart, I hold certifications in AI, data analysis, web development, and
-              cybersecurity. I am
-              passionate about creating impactful products, staying updated with industry trends, and enjoy video editing
-              and
-              exploring new AI technologies.
-            </p>
-          </section>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/C.png" alt="client logo" />
+              </a>
+            </li>
 
-          <section class="service">
-            <h3 class="h3 service-title">What I'm doing</h3>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/Cpp.png" alt="client logo" />
+              </a>
+            </li>
 
-            <ul class="service-list">
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-design.png" alt="AI Projects icon" width="40" />
-                </div>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/html.png" alt="client logo" />
+              </a>
+            </li>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">AI Projects</h4>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/CSS.png" alt="client logo" />
+              </a>
+            </li>
 
-                  <p class="service-item-text">
-                    Developing cutting-edge AI-powered solutions, including
-                    voice-activated desktop assistants integrating AI image
-                    generation and smart search tools.
-                  </p>
-                </div>
-              </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/mysql.png" alt="client logo" />
+              </a>
+            </li>
 
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-dev.png" alt="Web development icon" width="40" />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web Development</h4>
-
-                  <p class="service-item-text">
-                    Building modern, responsive websites using Python, HTML,
-                    CSS, and various web technologies. Experienced in frontend development to deliver seamless digital
-                    experiences.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-app.png" alt="App Development icon" width="40" />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">App Development</h4>
-
-                  <p class="service-item-text">
-                    Designing and building secure, user-friendly Android
-                    applications with real-world impact. It includes an
-                    advanced Voting App utilizing Flutter, Dart, and Firebase.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-backend.png" alt="Backend Development icon" width="43" />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Backend Development</h4>
-
-                  <p class="service-item-text">
-                    Focused on backend development, building out robust APIs and server-side logics. Managing database
-                    architecture
-                    ensuring smooth data flow is the main priority right now.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-data.png" alt="Database Manager icon" width="35" />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Database Manager</h4>
-
-                  <p class="service-item-text">
-                    Structuring and optimizing databases for reliable
-                    performance, secure data handling, and scalable access
-                    across applications.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="./images/icon-poster.png" alt="Poster Making icon" width="26" />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Poster Making</h4>
-
-                  <p class="service-item-text">
-                    Designing clean, impactful posters that communicate key
-                    messages at a glance with strong typography and brand
-                    consistency.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          <section class="clients">
-            <h3 class="h3 clients-title">Skills</h3>
-
-            <ul class="clients-list has-scrollbar">
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/python.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/C.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/Cpp.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/html.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/CSS.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/mysql.png" alt="client logo" />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img src="./images/flutter.png" alt="client logo" />
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./images/flutter.png" alt="client logo" />
+              </a>
+            </li>
+          </ul>
+        </section>
       </article>
 
       <!--
@@ -368,198 +541,202 @@
       -->
 
       <article class="resume" data-page="resume">
-        <div class="skeleton-placeholder">
-          <div class="skeleton-title"></div>
-          <div class="skeleton-text"></div>
-          <div class="skeleton-text"></div>
-          <div class="skeleton-text short"></div>
-          <div class="skeleton" style="height: 150px; margin-top: 20px;"></div>
-        </div>
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
 
-        <div class="article-content">
-          <header>
-            <h2 class="h2 article-title">Resume</h2>
-          </header>
-
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Education</h3>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  CHRIST (Deemed to be University)
-                </h4>
+            <h3 class="h3">Education</h3>
+          </div>
 
-                <span>2025 — Present</span>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                CHRIST (Deemed to be University)
+              </h4>
 
-                <p class="timeline-text">
-                  Pursuing Master of Computer Application (MCA) focused on
-                  software development and emerging technologies.
-                </p>
-              </li>
+              <span>2025 — Present</span>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Vivekananda Institute of Professional Studies, Delhi
-                </h4>
+              <p class="timeline-text">
+                Pursuing Master of Computer Application (MCA) focused on
+                software development and emerging technologies.
+              </p>
+            </li>
 
-                <span>2021 — 2024</span>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Vivekananda Institute of Professional Studies, Delhi
+              </h4>
 
-                <p class="timeline-text">
-                  Completed Bachelor of Computer Application (BCA) in
-                  programming, database systems, and software engineering with
-                  hands-on project experience.
-                </p>
-              </li>
+              <span>2021 — 2024</span>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Darbari Lal DAV Model School, Delhi
-                </h4>
+              <p class="timeline-text">
+                Completed Bachelor of Computer Application (BCA) in
+                programming, database systems, and software engineering with
+                hands-on project experience.
+              </p>
+            </li>
 
-                <span>2005 — 2021</span>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Darbari Lal DAV Model School, Delhi
+              </h4>
 
-                <p class="timeline-text">
-                  Completed Senior Secondary Education focusing on core subjects
-                  with an emphasis on analytical and computer skills.
-                </p>
-              </li>
-            </ol>
-          </section>
+              <span>2005 — 2021</span>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
+              <p class="timeline-text">
+                Completed Senior Secondary Education focusing on core subjects
+                with an emphasis on analytical and computer skills.
+              </p>
+            </li>
+          </ol>
+        </section>
 
-              <h3 class="h3">Experience</h3>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Certification Intern — Corizo
-                </h4>
+            <h3 class="h3">Experience</h3>
+          </div>
 
-                <span>August 2024 – October 2024</span>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Certification Intern — Corizo
+              </h4>
+
+              <span>August 2024 – October 2024</span>
+
+              <p class="timeline-text">
+                Developed a secure and user-friendly online voting Android app
+                using Flutter and Dart, featuring state-wise election screens
+                and real-time results with Firebase backend integration.
+              </p>
+              <br />
+              <p class="timeline-text">
+                Built a tech gadgets e-commerce website with secure
+                authentication, cart management, order processing, and an
+                admin dashboard for inventory and order tracking.
+              </p>
+              <br />
+              <p class="timeline-text">
+                Collaborated on backend data management and ensured robust
+                user authentication and data security features across
+                projects.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Academic Projects</h4>
+
+              <span>September 2023 — May 2024</span>
+
+              <p class="timeline-text">
+                Developed a Python-based AI Desktop Assistant integrating
+                OpenAI API and Google Gemini for voice control, AI image
+                generation, and gaming modules with a focus on usability and
+                performance optimization.
+              </p>
+            </li>
+
+            <!--
+                <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web designer</h4>
+
+                <span>2010 — 2013</span>
 
                 <p class="timeline-text">
-                  Developed a secure and user-friendly online voting Android app
-                  using Flutter and Dart, featuring state-wise election screens
-                  and real-time results with Firebase backend integration.
+                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
+                  delenit atque corrupti, quos dolores et quas molestias
+                  exceptur.
                 </p>
-                <br />
-                <p class="timeline-text">
-                  Built a tech gadgets e-commerce website with secure
-                  authentication, cart management, order processing, and an
-                  admin dashboard for inventory and order tracking.
-                </p>
-                <br />
-                <p class="timeline-text">
-                  Collaborated on backend data management and ensured robust
-                  user authentication and data security features across
-                  projects.
-                </p>
-              </li>
+                </li>
+                -->
+          </ol>
+        </section>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Academic Projects</h4>
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
 
-                <span>September 2023 — May 2024</span>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+                <data value="80">80%</data>
+              </div>
 
-                <p class="timeline-text">
-                  Developed a Python-based AI Desktop Assistant integrating
-                  OpenAI API and Google Gemini for voice control, AI image
-                  generation, and gaming modules with a focus on usability and
-                  performance optimization.
-                </p>
-              </li>
-            </ol>
-          </section>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%"></div>
+              </div>
+            </li>
 
-          <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">C++</h5>
+                <data value="60">60%</data>
+              </div>
 
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Python</h5>
-                  <data value="80">80%</data>
-                </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%"></div>
+              </div>
+            </li>
 
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
-                </div>
-              </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">HTML</h5>
+                <data value="85">85%</data>
+              </div>
 
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">C++</h5>
-                  <data value="60">60%</data>
-                </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%"></div>
+              </div>
+            </li>
 
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 60%"></div>
-                </div>
-              </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">CSS</h5>
+                <data value="85">85%</data>
+              </div>
 
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">HTML</h5>
-                  <data value="85">85%</data>
-                </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%"></div>
+              </div>
+            </li>
 
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">MySQL</h5>
+                <data value="70">70%</data>
+              </div>
 
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">CSS</h5>
-                  <data value="85">85%</data>
-                </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%"></div>
+              </div>
+            </li>
 
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Flutter</h5>
+                <data value="60">60%</data>
+              </div>
 
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">MySQL</h5>
-                  <data value="70">70%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Flutter</h5>
-                  <data value="60">60%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 60%"></div>
-                </div>
-              </li>
-            </ul>
-            <br />
-            <a href="./assets/Rohit Ghosh's Resumes.pdf" download class="download-resume-btn">
-              <ion-icon name="download-outline"></ion-icon> Download Resume
-            </a>
-          </section>
-        </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%"></div>
+              </div>
+            </li>
+          </ul>
+          <br />
+          <a href="./assets/Rohit Ghosh's Resumes.pdf" download class="download-resume-btn">
+            <ion-icon name="download-outline"></ion-icon> Download Resume
+          </a>
+        </section>
       </article>
 
       <!--
@@ -567,47 +744,37 @@
       -->
 
       <article class="certificates" data-page="certificates">
-        <!-- Skeleton Placeholder -->
-        <div class="skeleton-placeholder">
-          <div class="skeleton-title"></div>
-          <div class="skeleton-img" style="height: 100px;"></div>
-          <ul class="project-list">
-            <li class="skeleton" style="height: 250px;"></li>
-            <li class="skeleton" style="height: 250px;"></li>
+        <header>
+          <h2 class="h2 article-title">Certificates</h2>
+        </header>
+
+        <section class="projects">
+          <ul class="filter-list" id="certificate-filter-list">
+            <!-- Rendered dynamically from script.js -->
           </ul>
-        </div>
 
-        <div class="article-content">
-          <header>
-            <h2 class="h2 article-title">Certificates</h2>
-          </header>
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>
+                Select category
+              </div>
 
-          <section class="projects">
-            <ul class="filter-list" id="certificate-filter-list">
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list" id="certificate-select-list">
               <!-- Rendered dynamically from script.js -->
             </ul>
+          </div>
 
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>
-                  Select category
-                </div>
-
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul class="select-list" id="certificate-select-list">
-                <!-- Rendered dynamically from script.js -->
-              </ul>
-            </div>
-
-            <ul class="project-list" id="certificates-list">
-              <!-- Skeletons handled via script.js -->
-            </ul>
-          </section>
-        </div>
+          <ul class="project-list" id="certificates-list">
+            <li class="project-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
+            <li class="project-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
+            <li class="project-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
+          </ul>
+        </section>
       </article>
 
       <!--
@@ -615,26 +782,17 @@
       -->
 
       <article class="projects" data-page="projects">
-        <!-- Skeleton Placeholder -->
-        <div class="skeleton-placeholder">
-          <div class="skeleton-title"></div>
-          <ul class="blog-posts-list">
-            <li class="skeleton" style="height: 300px;"></li>
-            <li class="skeleton" style="height: 300px;"></li>
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list" id="projects-list">
+            <li class="blog-post-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
+            <li class="blog-post-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
+            <li class="blog-post-item skeleton"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></li>
           </ul>
-        </div>
-
-        <div class="article-content">
-          <header>
-            <h2 class="h2 article-title">Projects</h2>
-          </header>
-
-          <section class="blog-posts">
-            <ul class="blog-posts-list" id="projects-list">
-              <!-- Skeletons handled via initLoad -->
-            </ul>
-          </section>
-        </div>
+        </section>
       </article>
 
       <!--
@@ -642,50 +800,40 @@
       -->
 
       <article class="contact" data-page="contact">
-        <!-- Skeleton Placeholder -->
-        <div class="skeleton-placeholder">
-          <div class="skeleton-title"></div>
-          <div class="skeleton-img" style="height: 300px;"></div>
-          <div class="skeleton-text"></div>
-          <div class="skeleton-text"></div>
-        </div>
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
 
-        <div class="article-content">
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.911509368733!2d77.17460674708042!3d28.67601035256405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0265bf322413%3A0x3f7337cf3935112a!2sShastri%20Nagar%2C%20Delhi!5e0!3m2!1sen!2sin!4v1757009194882!5m2!1sen!2sin"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
 
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.911509368733!2d77.17460674708042!3d28.67601035256405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0265bf322413%3A0x3f7337cf3935112a!2sShastri%20Nagar%2C%20Delhi!5e0!3m2!1sen!2sin!4v1757009194882!5m2!1sen!2sin"
-                width="400" height="300" loading="lazy"></iframe>
-            </figure>
-          </section>
+        <section class="contact-form">
+          <h3 class="h3 form-title">Contact Form</h3>
 
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
+          <form action="https://formspree.io/f/xyzdlgbq" method="POST" class="form" data-form>
+            <input type="hidden" name="_next" value="https://rohitpvt.github.io/Portfolio/thankyou.html" />
+            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
 
-            <form action="https://formspree.io/f/xyzdlgbq" method="POST" class="form" data-form>
-              <input type="hidden" name="_next" value="https://rohitpvt.github.io/Portfolio/thankyou.html" />
-              <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
-              <input type="hidden" name="_captcha" value="false" />
-              <div class="input-wrapper">
-                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
+              <input type="email" name="email" class="form-input" placeholder="Email address" required
+                data-form-input />
+            </div>
 
-                <input type="email" name="email" class="form-input" placeholder="Email address" required
-                  data-form-input />
-              </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
-          </section>
-        </div>
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
       </article>
     </div>
   </main>
