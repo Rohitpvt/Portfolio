@@ -553,13 +553,50 @@ main {
   border: 3px solid var(--orange-yellow-crayola);
   border-radius: 50%;
   box-shadow: var(--shadow-3);
-  overflow: hidden;
   padding: 4px;
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
   perspective: 1000px;
 }
+
+.floating-badges {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.badge {
+  position: absolute;
+  background: hsla(240, 5%, 15%, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: bob 3s ease-in-out infinite alternate;
+}
+
+.b-1 { top: -10px; right: -10px; animation-delay: 0s; }
+.b-2 { bottom: -5px; right: -15px; animation-delay: -0.7s; }
+.b-3 { top: 20px; left: -20px; animation-delay: -1.5s; }
+.b-4 { bottom: 10px; left: -10px; animation-delay: -2.2s; }
+
+@keyframes bob {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(-10px) rotate(5deg); }
+}
+
 
 .avatar-box:hover {
   transform: scale(1.05);
