@@ -912,61 +912,81 @@ main {
 }
 
 /**
- * #tech-stack
+ * #tech-stack (Bento Style)
  */
 
 .tech-stack {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .tech-stack-title {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .tech-stack-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
 .tech-category {
-  background: hsla(240, 5%, 12%, 0.4);
-  backdrop-filter: blur(5px);
-  padding: 20px;
+  background: hsla(240, 5%, 8%, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 24px;
   border-radius: 20px;
   border: 1px solid hsla(0, 0%, 100%, 0.05);
-  box-shadow: var(--shadow-1);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-category:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.category-header ion-icon {
+  font-size: 24px;
+  color: var(--orange-yellow-crayola);
+  background: hsla(45, 100%, 72%, 0.1);
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .category-title {
-  color: var(--orange-yellow-crayola);
+  color: var(--white-1);
   font-size: var(--fs-6);
-  margin-bottom: 15px;
   font-weight: var(--fw-600);
 }
 
-.tech-chips {
+.tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
-.tech-chip {
-  background: var(--onyx);
-  color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 6px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--jet);
-  transition: all 0.3s ease;
+.tech-item {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  background: hsla(0, 0%, 100%, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid hsla(0, 0%, 100%, 0.03);
 }
 
-.tech-chip:hover {
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+.tech-category:hover .tech-item {
+  color: var(--white-2);
 }
+
 
 
 /**
