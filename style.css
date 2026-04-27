@@ -188,6 +188,19 @@ h1, h2, h3, h4, h5, h6, .name {
   font-family: var(--ff-outfit);
 }
 
+.title[data-typewriter]::after {
+  content: "|";
+  margin-left: 2px;
+  color: var(--orange-yellow-crayola);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
 body {
   background: #050505;
   color: var(--light-gray);

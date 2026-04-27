@@ -322,3 +322,55 @@ function initializeTilt() {
   });
 }
 
+/**
+ * Typewriter Effect
+ */
+function initTypewriter() {
+  const element = document.querySelector("[data-typewriter]");
+  if (!element) return;
+
+  const roles = [
+    "Software Developer",
+    "AI Enthusiast",
+    "Tech Innovator",
+    "Cybersecurity Student",
+    "Creative Designer"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentRole = roles[roleIndex];
+    let typeSpeed = 100;
+    
+    if (isDeleting) {
+      element.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 50;
+    } else {
+      element.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Wait at end
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typeSpeed = 500; // Wait before next word
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  type();
+}
+
+// Global initialization
+initTypewriter();
+
+
