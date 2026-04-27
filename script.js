@@ -486,5 +486,78 @@ function initParticles() {
 
 initParticles();
 
+/**
+ * Real-Time GitHub Stats
+ */
+async function initGitHubStats() {
+  const container = document.getElementById("github-stats-container");
+  if (!container) return;
+
+  const username = "Rohitpvt";
+
+  try {
+    const [userRes, reposRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${username}`),
+      fetch(`https://api.github.com/users/${username}/repos?per_page=100`)
+    ]);
+
+    const user = await userRes.json();
+    const repos = await reposRes.json();
+
+    const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+    const topLanguage = repos.reduce((acc, repo) => {
+      if (repo.language) acc[repo.language] = (acc[repo.language] || 0) + 1;
+      return acc;
+    }, {});
+    
+    const mainLang = Object.keys(topLanguage).reduce((a, b) => topLanguage[a] > topLanguage[b] ? a : b, "N/A");
+
+    container.innerHTML = `
+      <div class="github-stats-grid">
+        <div class="stat-item">
+          <ion-icon name="code-working-outline"></ion-icon>
+          <div class="stat-info">
+            <span class="stat-value">${user.public_repos}</span>
+            <span class="stat-label">Repositories</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <ion-icon name="star-outline"></ion-icon>
+          <div class="stat-info">
+            <span class="stat-value">${totalStars}</span>
+            <span class="stat-label">Total Stars</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <ion-icon name="people-outline"></ion-icon>
+          <div class="stat-info">
+            <span class="stat-value">${user.followers}</span>
+            <span class="stat-label">Followers</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <ion-icon name="terminal-outline"></ion-icon>
+          <div class="stat-info">
+            <span class="stat-value">${mainLang}</span>
+            <span class="stat-label">Main Language</span>
+          </div>
+        </div>
+      </div>
+      <div class="github-footer">
+        <a href="${user.html_url}" target="_blank" class="github-link">
+          <span>View GitHub Profile</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
+      </div>
+    `;
+  } catch (error) {
+    console.error("Error fetching GitHub stats:", error);
+    container.innerHTML = `<p>Unable to load GitHub stats. View profile <a href="https://github.com/${username}">here</a>.</p>`;
+  }
+}
+
+initGitHubStats();
+
+
 
 
