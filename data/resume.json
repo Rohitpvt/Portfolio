@@ -32,5 +32,13 @@
       "description": "Developed a Python-based AI Desktop Assistant integrating OpenAI API and Google Gemini.",
       "details": "• Designed GUI using CustomTkinter.\n• Implemented voice command recognition and text-to-speech.\n• Integrated DALL-E and Gemini Pro for dynamic AI responses and image generation.\n• Optimized codebase for low latency response."
     }
+  ],
+  "skills": [
+    { "name": "Python", "value": 90 },
+    { "name": "C++", "value": 75 },
+    { "name": "HTML/CSS", "value": 90 },
+    { "name": "MySQL", "value": 80 },
+    { "name": "Flutter/Dart", "value": 85 },
+    { "name": "Node.js", "value": 70 }
   ]
 }

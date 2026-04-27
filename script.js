@@ -138,7 +138,23 @@ async function loadCertificatesAndProjects() {
             li.addEventListener('click', () => openResumeModal(data.experience[i]));
           });
         }
+
+        const skillsList = document.getElementById('skills-list');
+        if (skillsList && data.skills) {
+          skillsList.innerHTML = data.skills.map(skill => `
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">${skill.name}</h5>
+                <data value="${skill.value}">${skill.value}%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-skill-value="${skill.value}" style="width: 0%"></div>
+              </div>
+            </li>
+          `).join('');
+        }
       });
+
 
 
     // 4. Generate Filter Categories safely
@@ -310,6 +326,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
         updateBackground(pageName);
+        if (pageName === 'resume') {
+          setTimeout(animateSkills, 500);
+        }
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -317,6 +336,18 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+/**
+ * Skill Animation
+ */
+function animateSkills() {
+  const skillFills = document.querySelectorAll('[data-skill-value]');
+  skillFills.forEach(fill => {
+    const value = fill.dataset.skillValue;
+    fill.style.width = value + '%';
+  });
+}
+
 
 /**
  * Section-Aware Background Colors
