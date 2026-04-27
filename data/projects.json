@@ -6,7 +6,8 @@
     "datetime": "2023-09-01",
     "description": "Developed a Python-based AI Assistant with AI Image Generation, Google Gemini integration, voice control, and gaming features, focusing on usability and performance optimization.",
     "image": "https://live.staticflickr.com/65535/54766829658_8544c35a9e_b.jpg",
-    "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI.git"
+    "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI.git",
+    "tags": ["Python", "Gemini AI", "GUI", "Voice AI"]
   },
   {
     "title": "E commerce Website",
@@ -15,7 +16,8 @@
     "datetime": "2024-09-01",
     "description": "Developed a tech gadgets e-commerce site with secure authentication, cart management, and order processing, along with an admin dashboard for inventory and orders.",
     "image": "https://live.staticflickr.com/65535/54766843943_37cd4bee73_b.jpg",
-    "link": "https://github.com/Rohitpvt/E-commerce-Web.git"
+    "link": "https://github.com/Rohitpvt/E-commerce-Web.git",
+    "tags": ["Node.js", "React", "MongoDB", "Express"]
   },
   {
     "title": "Online Voting System",
@@ -24,6 +26,7 @@
     "datetime": "2024-07-01",
     "description": "Built a Flutter & Dart online voting app with secure authentication, state-wise election screens, and real-time results, using Firebase for backend and data management.",
     "image": "https://live.staticflickr.com/65535/54766607636_ddbfff0763_b.jpg",
-    "link": "https://github.com/Rohitpvt/Online-Voting-System.git"
+    "link": "https://github.com/Rohitpvt/Online-Voting-System.git",
+    "tags": ["Flutter", "Dart", "Firebase", "Auth"]
   }
 ]

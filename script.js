@@ -76,6 +76,9 @@ async function loadCertificatesAndProjects() {
               </div>
               <h3 class="h3 blog-item-title">${proj.title}</h3>
               <p class="blog-text">${proj.description}</p>
+              <div class="project-tags">
+                ${(proj.tags || []).map(tag => `<span class="tag-chip">${tag}</span>`).join('')}
+              </div>
             </div>
           </a>
         </li>
