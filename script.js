@@ -483,35 +483,5 @@ function initParticles() {
 
 initParticles();
 
-/**
- * Magnetic Navigation Links
- */
-function initMagneticLinks() {
-  const navLinks = document.querySelectorAll(".navbar-link");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("mousemove", (e) => {
-      const rect = link.getBoundingClientRect();
-      const x = e.clientX - (rect.left + rect.width / 2);
-      const y = e.clientY - (rect.top + rect.height / 2);
-
-      // Move link by 30% of the mouse offset
-      link.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-      link.style.transition = "transform 0.1s ease-out";
-      link.style.display = "inline-block"; // Ensure transform works
-    });
-
-    link.addEventListener("mouseleave", () => {
-      link.style.transform = "translate(0, 0)";
-      link.style.transition = "transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)";
-    });
-  });
-}
-
-initMagneticLinks();
-updateBackground("about");
-initTypewriter();
-
-
 
 

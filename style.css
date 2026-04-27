@@ -767,16 +767,19 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
-  transition: color var(--transition-1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: var(--light-gray-70);
+  color: var(--orange-yellow-crayola);
+  transform: scale(1.15) translateY(-5px);
+  text-shadow: 0 0 10px hsla(45, 100%, 72%, 0.3);
 }
 
 .navbar-link.active {
   color: var(--orange-yellow-crayola);
+  transform: scale(1.05);
 }
 
 /*-----------------------------------*\
