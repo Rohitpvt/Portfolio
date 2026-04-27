@@ -34,11 +34,13 @@
     }
   ],
   "skills": [
-    { "name": "Python", "value": 90 },
+    { "name": "Python", "value": 95 },
     { "name": "C++", "value": 75 },
     { "name": "React", "value": 80 },
     { "name": "MySQL", "value": 80 },
     { "name": "Flutter/Dart", "value": 85 },
-    { "name": "Node.js", "value": 70 }
+    { "name": "Java", "value": 40 },
+    { "name": "JavaScript", "value": 70 },
+    { "name": "Node.js", "value": 75 }
   ]
 }
