@@ -1197,19 +1197,78 @@ main {
   scroll-snap-align: start;
 }
 
-.clients-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  filter: grayscale(1);
-  transition: var(--transition-1);
-  margin: 0 auto;
-  display: block;
+.clients {
+  margin-top: 30px;
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  background: hsla(240, 5%, 8%, 0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 28px;
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
 }
 
-.clients-item img:hover {
-  filter: grayscale(0);
+.clients-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: glide 30s linear infinite;
+  padding: 0 40px;
 }
+
+.clients-list:hover {
+  animation-play-state: paused;
+}
+
+.clients-item {
+  min-width: 120px;
+  filter: grayscale(1) opacity(0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.clients-item:hover {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.25) translateY(-8px);
+}
+
+.clients-item img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@keyframes glide {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Masking the edges for a soft fade */
+.clients::before,
+.clients::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients::before {
+  left: 0;
+  background: linear-gradient(to right, #121214 0%, transparent 100%);
+}
+
+.clients::after {
+  right: 0;
+  background: linear-gradient(to left, #121214 0%, transparent 100%);
+}
+
 
 /*-----------------------------------*\
   #RESUME
@@ -1318,76 +1377,26 @@ main {
   margin-bottom: 20px;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
+.skills-list {
+  padding: 20px;
 }
 
-@media (min-width: 768px) {
-  .skills-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.skill-card-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 25px !important;
-  background: hsla(240, 5%, 15%, 0.4) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid hsla(0, 0%, 100%, 0.05) !important;
-  border-radius: 20px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: default;
-}
-
-.skill-card-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: hsla(240, 5%, 20%, 0.6) !important;
-  border-color: var(--orange-yellow-crayola) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.skill-card-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: hsla(0, 0%, 100%, 0.05);
-  border-radius: 15px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.skill-card-item:hover .skill-card-icon {
-  transform: rotate(5deg) scale(1.1);
-}
-
-.skill-card-content {
-  flex-grow: 1;
+.skills-item:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 .skill .title-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.skill .title-wrapper h5 {
-  font-size: var(--fs-6);
-  color: var(--white-1);
+  gap: 5px;
+  margin-bottom: 8px;
 }
 
 .skill .title-wrapper data {
-  color: var(--light-gray-70);
+  color: var(--light-gray);
   font-size: var(--fs-7);
+  font-weight: var(--fw-300);
 }
-
 
 .skill-progress-bg {
   background: var(--jet);

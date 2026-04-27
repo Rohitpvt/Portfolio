@@ -34,12 +34,12 @@
     }
   ],
   "skills_proficiency": [
-    { "name": "Python", "value": 95, "icon": "./images/python.png" },
-    { "name": "MySQL", "value": 85, "icon": "./images/mysql.png" },
-    { "name": "Flutter", "value": 85, "icon": "./images/flutter.png" },
-    { "name": "JavaScript", "value": 80, "icon": "./images/icon-dev.png" },
-    { "name": "C++", "value": 75, "icon": "./images/Cpp.png" },
-    { "name": "React", "value": 85, "icon": "./images/icon-design.png" }
+    { "name": "Python", "value": 95 },
+    { "name": "React", "value": 85 },
+    { "name": "JavaScript", "value": 80 },
+    { "name": "Flutter/Dart", "value": 85 },
+    { "name": "Node.js", "value": 75 },
+    { "name": "MySQL", "value": 80 }
   ],
   "tech_stack": {
     "Programming Languages": ["Python", "C", "C++", "Java", "JavaScript"],
