@@ -36,7 +36,7 @@
   "skills": [
     { "name": "Python", "value": 90 },
     { "name": "C++", "value": 75 },
-    { "name": "HTML/CSS", "value": 90 },
+    { "name": "React", "value": 80 },
     { "name": "MySQL", "value": 80 },
     { "name": "Flutter/Dart", "value": 85 },
     { "name": "Node.js", "value": 70 }
