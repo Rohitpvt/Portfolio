@@ -59,6 +59,14 @@ async function loadCertificatesAndProjects() {
     const projRes = await fetch('./data/projects.json');
     const projects = await projRes.json();
 
+    // Trigger state for certificates and projects
+    const certArticle = document.querySelector('[data-page="certificates"]');
+    const projArticle = document.querySelector('[data-page="projects"]');
+    
+    if (certArticle) showLoadingState(certArticle);
+    if (projArticle) showLoadingState(projArticle);
+
+
     // 2. Render Projects
     const projectsList = document.getElementById('projects-list');
     if (projectsList) {
@@ -259,17 +267,46 @@ form.addEventListener("submit", async function (e) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// Show loading state function
+function showLoadingState(page) {
+  const placeholder = page.querySelector('.skeleton-placeholder');
+  const content = page.querySelector('.article-content');
+  
+  if (placeholder && content) {
+    placeholder.style.display = 'block';
+    content.classList.remove('visible');
+    
+    // Simulate/wait for content
+    setTimeout(() => {
+      placeholder.style.display = 'none';
+      content.classList.add('visible');
+    }, 600); // 600ms transition
+  }
+}
+
+// Initial load for active page
+document.addEventListener('DOMContentLoaded', () => {
+  const activePage = document.querySelector('[data-page].active');
+  if (activePage) showLoadingState(activePage);
+});
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const targetPageName = this.innerHTML.toLowerCase();
+    
     for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+      if (targetPageName === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
+        showLoadingState(pages[i]);
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
+        // Reset visibility for next time
+        const content = pages[i].querySelector('.article-content');
+        if (content) content.classList.remove('visible');
       }
     }
   });
