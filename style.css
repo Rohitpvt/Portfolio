@@ -213,50 +213,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
-  cursor: none;
 }
-
-/* Custom Cursor */
-.cursor-dot {
-  width: 5px;
-  height: 5px;
-  background-color: var(--orange-yellow-crayola);
-}
-
-.cursor-outline {
-  width: 30px;
-  height: 30px;
-  border: 2px solid var(--orange-yellow-crayola);
-}
-
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 1000;
-  pointer-events: none;
-  transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s, border 0.3s;
-}
-
-.cursor-outline.hovered {
-  width: 50px;
-  height: 50px;
-  background-color: hsla(190, 100%, 55%, 0.1);
-  border-color: var(--accent-secondary);
-}
-
-@media (max-width: 1024px) {
-  .cursor-dot, .cursor-outline {
-    display: none;
-  }
-  body {
-    cursor: auto;
-  }
-}
-
 
 /* Ambient Background styles */
 .ambient-background {
