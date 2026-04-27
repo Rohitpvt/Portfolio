@@ -87,7 +87,14 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px hsla(190, 100%, 55%, 0.4);
         }
+        .redirect-text {
+            color: #888;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: -10px;
+        }
     </style>
+
 </head>
 <body>
     <div class="ambient-background">
@@ -98,7 +105,26 @@
         <div class="success-icon">✓</div>
         <h1>Thank You!</h1>
         <p>Your message has been received. I'll get back to you as soon as possible.</p>
+        
+        <p class="redirect-text">Redirecting to Portfolio in <span id="timer">5</span>s...</p>
+        <br>
+
         <a href="index.html" class="back-btn">← Back to Portfolio</a>
     </div>
+
+    <script>
+        let seconds = 5;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            seconds--;
+            timerElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
 </body>
+
 </html>
