@@ -159,11 +159,12 @@ async function loadCertificatesAndProjects() {
         const techStackContainer = document.getElementById('tech-stack-container');
         const categoryIcons = {
           "programming languages": "code-slash-outline",
-          "ai & ml": "brain-outline",
-          "databases": "database-outline",
+          "ai & ml": "bulb-outline",
+          "databases": "server-outline",
           "web development": "globe-outline",
           "mobile development": "phone-portrait-outline"
         };
+
 
         if (techStackContainer && data.tech_stack) {
           techStackContainer.innerHTML = Object.entries(data.tech_stack).map(([category, skills]) => {
