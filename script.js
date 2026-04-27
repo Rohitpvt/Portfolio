@@ -133,9 +133,10 @@ async function loadCertificatesAndProjects() {
       }).join('');
     }
 
-    // 5. Initialize Filters and Tilt after DOM populates
+    // 5. Initialize Filters, Tilt and Cursor after DOM populates
     initializeFilters();
     initializeTilt();
+    if (window.refreshCursor) window.refreshCursor();
 
   } catch (error) {
     console.error("Error loading data:", error);
@@ -194,6 +195,8 @@ function initializeFilters() {
 // Call the load function on startup
 loadCertificatesAndProjects();
 initializeTilt();
+initCustomCursor();
+initTypewriter();
 
 
 // contact form variables (keep existing)
@@ -276,20 +279,50 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 /**
- * Mouse Spotlight Effect
+ * Custom Reactive Cursor & Mouse Spotlight
  */
-const spotlight = document.querySelector(".mouse-spotlight");
+function initCustomCursor() {
+  const cursorDot = document.querySelector("[data-cursor-dot]");
+  const cursorOutline = document.querySelector("[data-cursor-outline]");
+  const spotlight = document.querySelector(".mouse-spotlight");
 
-window.addEventListener("mousemove", (e) => {
-  if (spotlight) {
-    const x = e.clientX;
-    const y = e.clientY;
+  if (!cursorDot || !cursorOutline) return;
+
+  window.addEventListener("mousemove", (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // Direct update for dot and spotlight position
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
     
-    // Smoothly update spotlight position
-    document.body.style.setProperty("--mouse-x", `${x}px`);
-    document.body.style.setProperty("--mouse-y", `${y}px`);
-  }
-});
+    if (spotlight) {
+      document.body.style.setProperty("--mouse-x", `${posX}px`);
+      document.body.style.setProperty("--mouse-y", `${posY}px`);
+    }
+
+    // Smooth update for outline (lag effect)
+    cursorOutline.animate({
+      left: `${posX}px`,
+      top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+  });
+
+  // Re-apply hover listeners whenever content might change or on init
+  const applyHoverListeners = () => {
+    const interactables = document.querySelectorAll("a, button, .project-item, .blog-post-item, .service-item, .content-card, [data-nav-link]");
+    interactables.forEach(el => {
+      el.addEventListener("mouseenter", () => cursorOutline.classList.add("hovered"));
+      el.addEventListener("mouseleave", () => cursorOutline.classList.remove("hovered"));
+    });
+  };
+
+  applyHoverListeners();
+  
+  // Also expose it to be called after dynamic content loads
+  window.refreshCursor = applyHoverListeners;
+}
+
 
 /**
  * 3D Tilt Effect
