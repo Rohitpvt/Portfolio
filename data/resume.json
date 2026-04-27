@@ -42,7 +42,7 @@
     { "name": "MySQL", "value": 80 }
   ],
   "tech_stack": {
-    "Programming Languages": ["Python", "C++", "Java", "JavaScript"],
+    "Programming Languages": ["Python", "C", "C++", "Java", "JavaScript"],
     "AI & ML": ["OpenAI API", "Google Gemini", "NLP", "AI Image Generation"],
     "Databases": ["Firebase", "MongoDB", "MySQL"],
     "Web Development": ["HTML", "CSS", "React", "Node.js"],
