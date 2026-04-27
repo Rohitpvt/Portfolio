@@ -1,0 +1,275 @@
+[
+  {
+    "title": "Artificial Intelligence",
+    "category": "linkedin",
+    "issuer": "Microsoft",
+    "image": "./images/Certificates/AI for managers.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/c176a56b3d4775c28455aa6bb2f45c45609006c4c4ee58395183f40fb79b5e5a?trk=share_certificate"
+  },
+  {
+    "title": "Data Analysis",
+    "category": "linkedin",
+    "issuer": "Microsoft",
+    "image": "./images/Certificates/Data Analysis.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/d0aaaad08fa7775b6f5afd7e97083732f75930d657e3b1eebc884d9c16423698?trk=share_certificate"
+  },
+  {
+    "title": "C++",
+    "category": "linkedin",
+    "issuer": "C++ Institute",
+    "image": "./images/Certificates/C++.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/34a3b02da82f834acb10cd202376a9cf37ff86d4753f8b66ab7e6cbc146e1485?trk=share_certificate"
+  },
+  {
+    "title": "GitHub",
+    "category": "linkedin",
+    "issuer": "GitHub",
+    "image": "./images/Certificates/GitHub.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/2f6ad46912aff99b64773aac7650d82ee60f4cb3f760b62de0d27b7101577e92?trk=share_certificate"
+  },
+  {
+    "title": "Azure Generative AI",
+    "category": "linkedin",
+    "issuer": "Microsoft",
+    "image": "./images/Certificates/Azure Generative AI.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/94c197522196c178f6c7696e902b245f5e49ffa883ac5556b457cc3181b2e1ab?trk=share_certificate"
+  },
+  {
+    "title": "JavaScript",
+    "category": "linkedin",
+    "issuer": "Mozilla",
+    "image": "./images/Certificates/JavaScript.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/1c4f943e3020781aa8c6d7fc49eae39adf65de8faaba9c94997824276333e181?trk=share_certificate"
+  },
+  {
+    "title": "Java",
+    "category": "linkedin",
+    "issuer": "JetBrains",
+    "image": "./images/Certificates/Java.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/879a8135ca7852694e966d194682fc242a9c36fa35569dd7732e2d9f36e5c69a?trk=share_certificate"
+  },
+  {
+    "title": "Generative AI",
+    "category": "linkedin",
+    "issuer": "Adobe",
+    "image": "./images/Certificates/Generative AI.jpg",
+    "link": "https://www.linkedin.com/learning/certificates/a4e012c54c8615880657d8b79f7a579700d82e7558ed5d177280f91798cfcf81?trk=share_certificate"
+  },
+  {
+    "title": "Artificial Intelligence",
+    "category": "corizo",
+    "issuer": "Corizo",
+    "image": "./images/Certificates/Artificial Intelligence.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_artificialintelligence-internship-corizo-activity-7332075804018778112-DvKs?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Web Development",
+    "category": "corizo",
+    "issuer": "Corizo",
+    "image": "./images/Certificates/Web Development.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-webdevelopment-corizo-activity-7264726900839718912-Xvyt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Cyber Security",
+    "category": "corizo",
+    "issuer": "Corizo",
+    "image": "./images/Certificates/Cyber Security.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-cybersecurity-corizo-activity-7332076229744832513-3Pxu?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Cloud Computing",
+    "category": "corizo",
+    "issuer": "Corizo",
+    "image": "./images/Certificates/Cloud Computing.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-cloudcomputing-corizo-activity-7332070262609190915-jAG2?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "App Development",
+    "category": "corizo",
+    "issuer": "Corizo",
+    "image": "./images/Certificates/App Development.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-androidappdevelopment-corizo-activity-7254227956946935808-7axV?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "C Sharp",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/C Sharp.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/72dcacef439d"
+  },
+  {
+    "title": "GoLang",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/GoLang.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/8834def2b725"
+  },
+  {
+    "title": "SQL",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/SQL.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/3f01e4c1950b"
+  },
+  {
+    "title": "Python",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/Python.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/d2f94414c139"
+  },
+  {
+    "title": "Problem Solving",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/Problem Solving.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/d2969e67dcaf"
+  },
+  {
+    "title": "JavaScript",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/JavaScript HR.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/132ce001f3dc"
+  },
+  {
+    "title": "Java",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/Java HR.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/4a061bddbb7c"
+  },
+  {
+    "title": "CSS",
+    "category": "hackerrank",
+    "issuer": "HackerRank",
+    "image": "./images/Certificates/CSS.jpg",
+    "link": "https://www.hackerrank.com/certificates/iframe/f89341dfb0b2"
+  },
+  {
+    "title": "AI for Entrepreneurship",
+    "category": "intel a.i",
+    "issuer": "Skill India Intel A.I",
+    "image": "./images/Certificates/Al for Entrepreneurship.jpg",
+    "link": "https://courses.skillindiadigital.gov.in/api/custom_api/view_certificate/697a73765d7b423ab0ac67787028b54e"
+  },
+  {
+    "title": "Generative AI",
+    "category": "intel a.i",
+    "issuer": "Intel A.I",
+    "image": "./images/Certificates/Generative AI Intel.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_intel-artificialintelligence-generativeai-activity-7332073409939496961-v28N?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Entrepreneurship with AI",
+    "category": "intel a.i",
+    "issuer": "Intel A.I",
+    "image": "./images/Certificates/Entrepreneurship with Al.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_intel-entrepreneurship-artificialintelligence-activity-7332073633609138176-3zO-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Responsible AI",
+    "category": "intel a.i",
+    "issuer": "Intel A.I",
+    "image": "./images/Certificates/Responsible AI.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_intel-artificialintelligence-internship-activity-7332073862710337536-QUd3?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Space AI",
+    "category": "intel a.i",
+    "issuer": "Intel A.I",
+    "image": "./images/Certificates/Space AI.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_intel-artificialintelligence-space-activity-7332074198833471488-qB45?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Java",
+    "category": "programming hub",
+    "issuer": "Programming Hub",
+    "image": "./images/Certificates/Java Programming.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-java-programminghub-activity-7254239619494367233-mdlH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Python",
+    "category": "programming hub",
+    "issuer": "Programming Hub",
+    "image": "./images/Certificates/Python Programming.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-python-programminghub-activity-7254238139186085888-UwFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "HTML",
+    "category": "programming hub",
+    "issuer": "Programming Hub",
+    "image": "./images/Certificates/HTML Programming.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-html-programminghub-activity-7254235059744841731-_npP?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "JavaScript",
+    "category": "programming hub",
+    "issuer": "Programming Hub",
+    "image": "./images/Certificates/JavaScript Programming.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-javascript-programminghub-activity-7254239036981030912-oEoj?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Python & Ethical Hacking",
+    "category": "udemy",
+    "issuer": "Udemy",
+    "image": "./images/Certificates/Python & Ethical Hacking.jpg",
+    "link": "https://www.udemy.com/certificate/UC-5eb4cdd4-85e7-4167-97d0-1616f2016b36/"
+  },
+  {
+    "title": "JavaScript",
+    "category": "udemy",
+    "issuer": "Udemy",
+    "image": "./images/Certificates/Udemy JavaScript.jpg",
+    "link": "https://www.udemy.com/certificate/UC-afab8b91-b376-4c87-b401-99b0b8ea0a85/"
+  },
+  {
+    "title": "Practical SQL with SQLite",
+    "category": "udemy",
+    "issuer": "Udemy",
+    "image": "./images/Certificates/Udemy Practical SQL with SQLite.jpg",
+    "link": "https://www.udemy.com/certificate/UC-59f6e9e4-f5c5-47f5-8828-4158e36504cf/"
+  },
+  {
+    "title": "Cyber Security",
+    "category": "coursera",
+    "issuer": "Coursera",
+    "image": "./images/Certificates/Cyber Security Coursera.jpg",
+    "link": "https://www.coursera.org/account/accomplishments/verify/NYB0CVR5KT3S"
+  },
+  {
+    "title": "Google AI Essentials",
+    "category": "coursera",
+    "issuer": "Coursera",
+    "image": "./images/Certificates/Google AI Essentials.jpg",
+    "link": "https://www.coursera.org/account/accomplishments/verify/NP6NR2AAERQ1"
+  },
+  {
+    "title": "Backend Web Development using NodeJS",
+    "category": "others",
+    "issuer": "DevTown",
+    "image": "./images/Certificates/Web Development Google.jpg",
+    "link": "https://www.cert.devtown.in/verify/Z1A6Ra9"
+  },
+  {
+    "title": "C Sharp",
+    "category": "others",
+    "issuer": "Infosys",
+    "image": "./images/Certificates/C Sharp Infosys.jpg",
+    "link": "https://www.linkedin.com/posts/rohit-ghosh-06112002rg_internship-csharp-infosys-activity-7254242876774088706-bfz1?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOPR9gBMgpNtrQLA8tfCXWpr4XT3xo3S4k"
+  },
+  {
+    "title": "Bring AI to Work",
+    "category": "others",
+    "issuer": "Google",
+    "image": "./images/Certificates/Bring AI to Work.jpg",
+    "link": "https://flic.kr/p/2rrsr98"
+  },
+  {
+    "title": "Accessibility Specialist",
+    "category": "others",
+    "issuer": "Wix",
+    "image": "https://live.staticflickr.com/65535/54766869865_fe28ed3a28_b.jpg",
+    "link": "https://flic.kr/p/2rrywmZ"
+  }
+]

@@ -50,52 +50,148 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+async function loadCertificatesAndProjects() {
+  try {
+    // 1. Fetch data
+    const certRes = await fetch('./data/certificates.json');
+    const certificates = await certRes.json();
+    
+    const projRes = await fetch('./data/projects.json');
+    const projects = await projRes.json();
 
-select.addEventListener("click", function () {
-  elementToggleFunc(this);
-});
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-  });
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-const filterFunc = function (selectedValue) {
-  for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
+    // 2. Render Projects
+    const projectsList = document.getElementById('projects-list');
+    if (projectsList) {
+      projectsList.innerHTML = projects.map(proj => `
+        <li class="blog-post-item">
+          <a href="${proj.link}">
+            <figure class="blog-banner-box">
+              <img src="${proj.image}" alt="${proj.category}" loading="lazy" />
+            </figure>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <p class="blog-category">${proj.category}</p>
+                <span class="dot"></span>
+                <time datetime="${proj.datetime}">${proj.date}</time>
+              </div>
+              <h3 class="h3 blog-item-title">${proj.title}</h3>
+              <p class="blog-text">${proj.description}</p>
+            </div>
+          </a>
+        </li>
+      `).join('');
     }
-  }
-};
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-  });
+    // 3. Render Certificates
+    const certList = document.getElementById('certificates-list');
+    if (certList) {
+      certList.innerHTML = certificates.map(cert => `
+        <li class="project-item active" data-filter-item data-category="${cert.category}">
+          <a href="${cert.link}">
+            <figure class="project-img">
+              <div class="project-item-icon-box">
+                <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="${cert.image}" alt="${cert.title}" loading="lazy" />
+            </figure>
+            <h3 class="project-title">${cert.title}</h3>
+            <p class="project-category">${cert.issuer}</p>
+          </a>
+        </li>
+      `).join('');
+    }
+
+    // 4. Generate Filter Categories safely
+    const rawCategories = [...new Set(certificates.map(c => c.category))];
+    const categories = ["all", ...rawCategories];
+    
+    const filterList = document.getElementById('certificate-filter-list');
+    if (filterList) {
+      filterList.innerHTML = categories.map((cat, index) => {
+        // Use a better display name (e.g., intel a.i -> Intel A.I)
+        let displayCat = cat.replace(/\b\w/g, l => l.toUpperCase());
+        if (cat === "intel a.i") displayCat = "Intel A.I"; // Special cases
+        
+        return `
+          <li class="filter-item">
+            <button class="${index === 0 ? 'active' : ''}" data-filter-btn>${displayCat}</button>
+          </li>
+        `;
+      }).join('');
+    }
+
+    const selectList = document.getElementById('certificate-select-list');
+    if (selectList) {
+      selectList.innerHTML = categories.map(cat => {
+        let displayCat = cat.replace(/\b\w/g, l => l.toUpperCase());
+        if (cat === "intel a.i") displayCat = "Intel A.I";
+        return `
+          <li class="select-item">
+            <button data-select-item>${displayCat}</button>
+          </li>
+        `;
+      }).join('');
+    }
+
+    // 5. Initialize Filters after DOM populates
+    initializeFilters();
+
+  } catch (error) {
+    console.error("Error loading data:", error);
+  }
 }
+
+function initializeFilters() {
+  const select = document.querySelector("[data-select]");
+  const selectItems = document.querySelectorAll("[data-select-item]");
+  const selectValue = document.querySelector("[data-selecct-value]"); // Keep original typo for matching HTML
+  const filterBtn = document.querySelectorAll("[data-filter-btn]");
+  const filterItems = document.querySelectorAll("[data-filter-item]");
+
+  // Prevent multiple attachment if this function gets called twice
+  if (select && !select.dataset.listenerInstalled) {
+    select.addEventListener("click", function () {
+      elementToggleFunc(this);
+    });
+    select.dataset.listenerInstalled = 'true';
+  }
+
+  const filterFunc = function (selectedValue) {
+    for (let i = 0; i < filterItems.length; i++) {
+      if (selectedValue === "all") {
+        filterItems[i].classList.add("active");
+      } else if (selectedValue === filterItems[i].dataset.category) {
+        filterItems[i].classList.add("active");
+      } else {
+        filterItems[i].classList.remove("active");
+      }
+    }
+  };
+
+  for (let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener("click", function () {
+      let selectedValue = this.innerText.toLowerCase();
+      if(selectValue) selectValue.innerText = this.innerText;
+      if(select) elementToggleFunc(select);
+      filterFunc(selectedValue);
+    });
+  }
+
+  let lastClickedBtn = filterBtn[0];
+  for (let i = 0; i < filterBtn.length; i++) {
+    filterBtn[i].addEventListener("click", function () {
+      let selectedValue = this.innerText.toLowerCase();
+      if (selectValue) selectValue.innerText = this.innerText;
+      filterFunc(selectedValue);
+      if (lastClickedBtn) lastClickedBtn.classList.remove("active");
+      this.classList.add("active");
+      lastClickedBtn = this;
+    });
+  }
+}
+
+// Call the load function on startup
+loadCertificatesAndProjects();
 
 // contact form variables (keep existing)
 const form = document.querySelector("[data-form]");
