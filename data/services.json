@@ -1,0 +1,38 @@
+[
+  {
+    "title": "AI Projects",
+    "description": "Developing cutting-edge AI-powered solutions, including voice-activated desktop assistants integrating AI image generation and smart search tools.",
+    "icon": "./images/icon-design.png",
+    "iconWidth": "40"
+  },
+  {
+    "title": "Web Development",
+    "description": "Building modern, responsive websites using Python, HTML, CSS, and various web technologies. Experienced in frontend development to deliver seamless digital experiences.",
+    "icon": "./images/icon-dev.png",
+    "iconWidth": "40"
+  },
+  {
+    "title": "App Development",
+    "description": "Designing and building secure, user-friendly Android applications with real-world impact. It includes an advanced Voting App utilizing Flutter, Dart, and Firebase.",
+    "icon": "./images/icon-app.png",
+    "iconWidth": "40"
+  },
+  {
+    "title": "Backend Development",
+    "description": "Focused on backend development, building out robust APIs and server-side logics. Managing database architecture ensuring smooth data flow is the main priority right now.",
+    "icon": "./images/icon-backend.png",
+    "iconWidth": "43"
+  },
+  {
+    "title": "Database Manager",
+    "description": "Structuring and optimizing databases for reliable performance, secure data handling, and scalable access across applications.",
+    "icon": "./images/icon-data.png",
+    "iconWidth": "35"
+  },
+  {
+    "title": "Poster Making",
+    "description": "Designing clean, impactful posters that communicate key messages at a glance with strong typography and brand consistency.",
+    "icon": "./images/icon-poster.png",
+    "iconWidth": "26"
+  }
+]

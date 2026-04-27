@@ -1,0 +1,27 @@
+{
+  "education": [
+    {
+      "institution": "CHRIST (Deemed to be University)",
+      "date": "2025 — Present",
+      "description": "Pursuing Master of Computer Application (MCA) focused on software development and emerging technologies."
+    },
+    {
+      "institution": "Vivekananda Institute of Professional Studies, Delhi",
+      "date": "2021 — 2024",
+      "description": "Completed Bachelor of Computer Application (BCA) in programming, database systems, and software engineering with hands-on project experience."
+    },
+    {
+      "institution": "Darbari Lal DAV Model School, Delhi",
+      "date": "2005 — 2021",
+      "description": "Completed Senior Secondary Education focusing on core subjects with an emphasis on analytical and computer skills."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Certification Intern",
+      "company": "Corizo",
+      "date": "August 2024 – October 2024",
+      "description": "Developed a secure and user-friendly online voting Android app using Flutter and Dart, featuring state-wise election screens and real-time results with Firebase backend integration."
+    }
+  ]
+}
