@@ -1114,73 +1114,51 @@ main {
 }
 
 .timeline-list {
-  position: relative;
-  margin-left: 35px; /* Consistent base margin */
+  font-size: var(--fs-6);
+  margin-left: 45px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
 }
 
-/* Segmented Connecting Line */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 37px; /* Start below the dot (25px + 12px) */
-  left: -32px;
-  width: 2px;
-  height: calc(100% + 18px); /* Connect to next item's dot area */
-  background: var(--jet);
-  opacity: 0.5;
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
 }
-
-.timeline-item:last-child::before {
-  display: none; /* No line after the last item */
-}
-
-/* Glowing Timeline Dot */
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  top: 25px;
-  left: -37px;
-  width: 12px;
-  height: 12px;
-  background: var(--bg-gradient-jet);
-  border: 2px solid var(--orange-yellow-crayola);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--orange-yellow-crayola);
-  z-index: 2;
-  transition: all 0.3s ease;
-}
-
-
-.timeline-item:hover::after {
-  transform: scale(1.3);
-  box-shadow: 0 0 20px var(--orange-yellow-crayola);
-}
-
-.timeline-item .content-card {
-  margin-left: 20px;
-  padding: 20px;
-}
-
 
 .timeline-item-title {
   font-size: var(--fs-6);
   line-height: 1.3;
   margin-bottom: 7px;
-  color: var(--white-1);
 }
 
 .timeline-list span {
-  color: var(--orange-yellow-crayola);
-  font-weight: var(--fw-500);
-  margin-bottom: 15px;
-  display: block;
+  color: var(--vegas-gold);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
 }
 
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--jet);
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 6px;
+  width: 6px;
+  background: var(--text-gradient-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--jet);
+}
 
 .timeline-text {
   color: var(--light-gray);
@@ -1964,7 +1942,17 @@ textarea.form-input::-webkit-resizer {
    * RESUME
    */
   .timeline-list {
-    margin-left: 45px;
+    margin-left: 35px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -25px;
+  }
+
+  .timeline-item::after {
+    height: 6px;
+    width: 6px;
+    left: -28px;
   }
 
   .skills-item:not(:last-child) {
@@ -2302,6 +2290,16 @@ textarea.form-input::-webkit-resizer {
 
   .timeline-list {
     margin-left: 65px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -40px;
+  }
+
+  .timeline-item::after {
+    height: 8px;
+    width: 8px;
+    left: -43px;
   }
 
   .skills-item:not(:last-child) {

@@ -139,76 +139,11 @@ async function loadCertificatesAndProjects() {
     // 5. Initialize Filters and Tilt after DOM populates
     initializeFilters();
     initializeTilt();
-    renderResume();
 
   } catch (error) {
     console.error("Error loading data:", error);
   }
 }
-
-/**
- * Resume Rendering & Interactive Modal
- */
-async function renderResume() {
-  try {
-    const response = await fetch('./data/resume.json');
-    const data = await response.json();
-
-    const eduList = document.getElementById('education-list');
-    const expList = document.getElementById('experience-list');
-
-    const createTimelineItem = (item) => `
-      <li class="timeline-item content-card" style="cursor: pointer;" data-resume-item='${JSON.stringify(item).replace(/'/g, "&apos;")}'>
-        <h4 class="h4 timeline-item-title">${item.title}</h4>
-        <span>${item.period}</span>
-        <p class="timeline-text">${item.description}</p>
-      </li>
-    `;
-
-    if (eduList) eduList.innerHTML = data.education.map(createTimelineItem).join('');
-    if (expList) expList.innerHTML = data.experience.map(createTimelineItem).join('');
-
-    // Modal Logic
-    const modalContainer = document.querySelector("[data-resume-modal-container]");
-    const modalCloseBtn = document.querySelector("[data-resume-modal-close-btn]");
-    const overlay = document.querySelector("[data-resume-overlay]");
-    const modalTitle = document.querySelector("[data-resume-modal-title]");
-    const modalDate = document.querySelector("[data-resume-modal-date]");
-    const modalText = document.querySelector("[data-resume-modal-text]");
-
-    const toggleModal = () => {
-      modalContainer.classList.toggle("active");
-      overlay.classList.toggle("active");
-    };
-
-    document.querySelectorAll("[data-resume-item]").forEach(item => {
-      item.addEventListener("click", () => {
-        const itemData = JSON.parse(item.getAttribute("data-resume-item"));
-        modalTitle.innerText = itemData.title;
-        modalDate.innerText = itemData.period;
-        modalText.innerHTML = `
-          <ul>
-            ${itemData.details.map(detail => `
-              <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
-                <span style="color: var(--orange-yellow-crayola); margin-top: 5px;">▹</span>
-                <span>${detail}</span>
-              </li>
-            `).join('')}
-          </ul>
-        `;
-        toggleModal();
-      });
-    });
-
-    [modalCloseBtn, overlay].forEach(el => {
-      if (el) el.addEventListener("click", toggleModal);
-    });
-
-  } catch (err) {
-    console.error("Error rendering resume:", err);
-  }
-}
-
 
 function initializeFilters() {
   const select = document.querySelector("[data-select]");
