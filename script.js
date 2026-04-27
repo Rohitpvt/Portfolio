@@ -211,26 +211,45 @@ for (let i = 0; i < formInputs.length; i++) {
 }
 
 // Add this new form submission handler
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
+  e.preventDefault(); // Stop the browser from redirecting to Formspree page
+
   // Show loading state
   const originalContent = formBtn.innerHTML;
   formBtn.innerHTML =
     '<ion-icon name="hourglass-outline"></ion-icon><span>Sending...</span>';
   formBtn.disabled = true;
 
-  // Let the form submit naturally to Formspree
-  // After 2 seconds, show success message (Formspree will handle the actual submission)
-  setTimeout(() => {
-    formBtn.innerHTML =
-      '<ion-icon name="checkmark-circle"></ion-icon><span>Message Sent!</span>';
+  try {
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-    // Reset form and button after 3 seconds
+    if (response.ok) {
+      formBtn.innerHTML =
+        '<ion-icon name="checkmark-circle"></ion-icon><span>Message Sent!</span>';
+      
+      // Redirect to thankyou page after a short delay
+      setTimeout(() => {
+        window.location.href = "thankyou.html";
+      }, 1500);
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    formBtn.innerHTML = '<ion-icon name="alert-circle-outline"></ion-icon><span>Error!</span>';
+    formBtn.disabled = false;
+    
     setTimeout(() => {
-      form.reset();
       formBtn.innerHTML = originalContent;
-      formBtn.disabled = false;
     }, 3000);
-  }, 2000);
+  }
 });
 
 // page navigation variables
