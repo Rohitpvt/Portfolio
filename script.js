@@ -133,8 +133,9 @@ async function loadCertificatesAndProjects() {
       }).join('');
     }
 
-    // 5. Initialize Filters after DOM populates
+    // 5. Initialize Filters and Tilt after DOM populates
     initializeFilters();
+    initializeTilt();
 
   } catch (error) {
     console.error("Error loading data:", error);
@@ -192,6 +193,8 @@ function initializeFilters() {
 
 // Call the load function on startup
 loadCertificatesAndProjects();
+initializeTilt();
+
 
 // contact form variables (keep existing)
 const form = document.querySelector("[data-form]");
@@ -287,3 +290,35 @@ window.addEventListener("mousemove", (e) => {
     document.body.style.setProperty("--mouse-y", `${y}px`);
   }
 });
+
+/**
+ * 3D Tilt Effect
+ */
+function initializeTilt() {
+  const cards = document.querySelectorAll(".service-item, .project-item, .blog-post-item, .content-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardWidth = cardRect.width;
+      const cardHeight = cardRect.height;
+      const centerX = cardRect.left + cardWidth / 2;
+      const centerY = cardRect.top + cardHeight / 2;
+      const mouseX = e.clientX - centerX;
+      const mouseY = e.clientY - centerY;
+
+      // Calculate rotation (max 10 degrees)
+      const rotateX = (-10 * mouseY) / (cardHeight / 2);
+      const rotateY = (10 * mouseX) / (cardWidth / 2);
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.transition = "transform 0.1s ease";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.transition = "transform 0.5s ease";
+    });
+  });
+}
+
