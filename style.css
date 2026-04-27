@@ -108,6 +108,36 @@
   box-sizing: border-box;
 }
 
+/* Modern & Aesthetic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(240, 5%, 5%, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--orange-yellow-crayola), var(--accent-secondary));
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-yellow-crayola);
+  box-shadow: 0 0 10px var(--orange-yellow-crayola);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange-yellow-crayola) hsla(240, 5%, 5%, 0.5);
+}
+
 a {
   text-decoration: none;
 }
@@ -2195,9 +2225,7 @@ textarea.form-input::-webkit-resizer {
     width: 700px;
   }
 
-  .has-scrollbar::-webkit-scrollbar-button {
-    width: 100px;
-  }
+
 
   /**
    * SIDEBAR
@@ -2404,29 +2432,7 @@ textarea.form-input::-webkit-resizer {
    * RESET
    */
 
-  body::-webkit-scrollbar {
-    width: 20px;
-  }
 
-  body::-webkit-scrollbar-track {
-    background: var(--smoky-black);
-  }
-
-  body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    background: hsla(0, 0%, 100%, 0.15);
-  }
-
-  body::-webkit-scrollbar-button {
-    height: 60px;
-  }
 
   /**
    * REUSED STYLE
