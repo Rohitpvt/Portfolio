@@ -186,7 +186,6 @@ textarea {
 html {
   font-family: var(--ff-inter);
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 h1, h2, h3, h4, h5, h6, .name {
@@ -214,54 +213,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
-  cursor: none;
-}
-
-a, button, [role="button"], input, textarea, select, .navbar-link {
-  cursor: none !important;
-}
-
-/* Custom Cursor Styles */
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 9999;
-  pointer-events: none;
-  display: none;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--orange-yellow-crayola);
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--orange-yellow-crayola);
-  opacity: 0.5;
-  transition: width 0.3s, height 0.3s, border-color 0.3s, border-radius 0.3s;
-}
-
-/* Cursor states */
-body.cursor-hover .cursor-dot {
-  width: 4px;
-  height: 4px;
-  background-color: var(--accent-secondary);
-}
-
-body.cursor-hover .cursor-outline {
-  width: 60px;
-  height: 60px;
-  border-color: var(--accent-secondary);
-  opacity: 0.8;
-  border-width: 1px;
 }
 
 /* Ambient Background styles */
@@ -288,25 +239,30 @@ body.cursor-hover .cursor-outline {
 .ambient-background .glow {
   position: absolute;
   filter: blur(120px);
-  opacity: 0.5;
+  opacity: 0.3;
   border-radius: 50%;
-  animation: floatAmbient 15s ease-in-out infinite;
+  pointer-events: none;
+  transition: background 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .blob-1 {
-  width: 50vw;
-  height: 50vw;
-  background: var(--orange-yellow-crayola);
+  width: 60vw;
+  height: 60vw;
+  background: var(--blob-color-1, var(--orange-yellow-crayola));
   top: -10%;
   left: -10%;
+  animation: floatAmbient 20s ease-in-out infinite alternate;
 }
+
 .blob-2 {
-  width: 40vw;
-  height: 40vw;
-  background: var(--accent-secondary);
+  width: 50vw;
+  height: 50vw;
+  background: var(--blob-color-2, var(--accent-secondary));
   bottom: -10%;
   right: -10%;
-  animation-delay: -7s !important;
+  animation: floatAmbient 25s ease-in-out infinite alternate-reverse;
 }
+
 
 .mouse-spotlight {
   width: 400px;

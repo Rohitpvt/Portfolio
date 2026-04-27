@@ -262,11 +262,14 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const pageName = this.innerHTML.toLowerCase();
+    
     for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+      if (pageName === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
+        updateBackground(pageName);
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -274,6 +277,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+/**
+ * Section-Aware Background Colors
+ */
+function updateBackground(page) {
+  const blobs = {
+    about: { c1: "hsl(190, 100%, 55%)", c2: "hsl(280, 100%, 65%)" },     // Cyan / Purple
+    resume: { c1: "hsl(280, 100%, 65%)", c2: "hsl(340, 100%, 65%)" },    // Purple / Pink
+    portfolio: { c1: "hsl(160, 100%, 50%)", c2: "hsl(190, 100%, 55%)" }, // Emerald / Cyan
+    projects: { c1: "hsl(210, 100%, 60%)", c2: "hsl(240, 100%, 70%)" },  // Blue / Indigo
+    contact: { c1: "hsl(30, 100%, 60%)", c2: "hsl(10, 100%, 65%)" }      // Orange / Coral
+  };
+
+  const colors = blobs[page] || blobs.about;
+  document.documentElement.style.setProperty("--blob-color-1", colors.c1);
+  document.documentElement.style.setProperty("--blob-color-2", colors.c2);
+}
+
 
 /**
  * Mouse Spotlight Effect
@@ -461,61 +482,6 @@ function initParticles() {
 }
 
 initParticles();
-
-/**
- * Custom Reactive & Magnetic Cursor
- */
-function initCustomCursor() {
-  const cursorDot = document.querySelector("[data-cursor-dot]");
-  const cursorOutline = document.querySelector("[data-cursor-outline]");
-
-  if (!cursorDot || !cursorOutline) return;
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-
-  window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    cursorDot.style.display = "block";
-    cursorOutline.style.display = "block";
-
-    cursorDot.style.left = mouseX + "px";
-    cursorDot.style.top = mouseY + "px";
-  });
-
-  function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-
-    cursorOutline.style.left = cursorX + "px";
-    cursorOutline.style.top = cursorY + "px";
-
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  document.querySelectorAll("a, button, .content-card, .project-item, .navbar-link, .select-item, .form-btn, .avatar-box, .social-item").forEach(el => {
-    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
-    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
-  });
-
-  document.querySelectorAll(".navbar-link, .social-item, .info_more-btn").forEach(el => {
-    el.addEventListener("mousemove", (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
-      const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
-      el.style.transform = `translate(${x}px, ${y}px)`;
-    });
-    el.addEventListener("mouseleave", () => el.style.transform = `translate(0px, 0px)`);
-  });
-}
-
-initCustomCursor();
-
 
 
 
