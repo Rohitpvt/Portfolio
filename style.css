@@ -186,6 +186,7 @@ textarea {
 html {
   font-family: var(--ff-inter);
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 h1, h2, h3, h4, h5, h6, .name {
@@ -213,6 +214,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+  cursor: none;
+}
+
+a, button, [role="button"], input, textarea, select, .navbar-link {
+  cursor: none !important;
+}
+
+/* Custom Cursor Styles */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--orange-yellow-crayola);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--orange-yellow-crayola);
+  opacity: 0.5;
+  transition: width 0.3s, height 0.3s, border-color 0.3s, border-radius 0.3s;
+}
+
+/* Cursor states */
+body.cursor-hover .cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-secondary);
+}
+
+body.cursor-hover .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent-secondary);
+  opacity: 0.8;
+  border-width: 1px;
 }
 
 /* Ambient Background styles */
@@ -296,49 +345,12 @@ body:not(:hover) .mouse-spotlight {
 article {
   background: hsla(240, 5%, 8%, 0.6);
   backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
   border-radius: 24px;
   padding: 20px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   z-index: 1;
-  position: relative;
-  overflow: hidden; /* Contains the beam */
 }
-
-/* The Border Beam */
-.sidebar::before,
-article::before {
-  content: "";
-  position: absolute;
-  inset: -150%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 150deg,
-    var(--orange-yellow-crayola) 180deg,
-    var(--accent-secondary) 210deg,
-    transparent 240deg
-  );
-  animation: rotateBeam 6s linear infinite;
-  z-index: -2;
-}
-
-/* Inner surface to create the border look */
-.sidebar::after,
-article::after {
-  content: "";
-  position: absolute;
-  inset: 1.5px;
-  background: inherit;
-  border-radius: inherit;
-  backdrop-filter: inherit;
-  z-index: -1;
-}
-
-@keyframes rotateBeam {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 
 .separator {
   width: 100%;

@@ -462,5 +462,60 @@ function initParticles() {
 
 initParticles();
 
+/**
+ * Custom Reactive & Magnetic Cursor
+ */
+function initCustomCursor() {
+  const cursorDot = document.querySelector("[data-cursor-dot]");
+  const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+  if (!cursorDot || !cursorOutline) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.display = "block";
+    cursorOutline.style.display = "block";
+
+    cursorDot.style.left = mouseX + "px";
+    cursorDot.style.top = mouseY + "px";
+  });
+
+  function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+
+    cursorOutline.style.left = cursorX + "px";
+    cursorOutline.style.top = cursorY + "px";
+
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  document.querySelectorAll("a, button, .content-card, .project-item, .navbar-link, .select-item, .form-btn, .avatar-box, .social-item").forEach(el => {
+    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+  });
+
+  document.querySelectorAll(".navbar-link, .social-item, .info_more-btn").forEach(el => {
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+      el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    el.addEventListener("mouseleave", () => el.style.transform = `translate(0px, 0px)`);
+  });
+}
+
+initCustomCursor();
+
+
 
 
