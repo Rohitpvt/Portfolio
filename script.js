@@ -50,92 +50,16 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
-async function loadPortfolioData() {
+async function loadCertificatesAndProjects() {
   try {
-    // 1. Fetch all data
-    const [certRes, projRes, servRes, skillRes, resumeRes] = await Promise.all([
-      fetch('./data/certificates.json'),
-      fetch('./data/projects.json'),
-      fetch('./data/services.json'),
-      fetch('./data/skills.json'),
-      fetch('./data/resume.json')
-    ]);
-
+    // 1. Fetch data
+    const certRes = await fetch('./data/certificates.json');
     const certificates = await certRes.json();
+    
+    const projRes = await fetch('./data/projects.json');
     const projects = await projRes.json();
-    const services = await servRes.json();
-    const skills = await skillRes.json();
-    const resume = await resumeRes.json();
 
-    // 2. Render Services
-    const servList = document.getElementById('services-list');
-    if (servList) {
-      servList.innerHTML = services.map(serv => `
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img src="${serv.icon}" alt="${serv.title} icon" width="${serv.iconWidth}" />
-          </div>
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">${serv.title}</h4>
-            <p class="service-item-text">${serv.description}</p>
-          </div>
-        </li>
-      `).join('');
-    }
-
-    // 3. Render Skills (Logos/Slideshow)
-    const skillsLogoList = document.getElementById('skills-logos-list');
-    if (skillsLogoList) {
-      skillsLogoList.innerHTML = skills.map(skill => `
-        <li class="clients-item">
-          <a href="#">
-            <img src="${skill.image}" alt="${skill.name}" />
-          </a>
-        </li>
-      `).join('');
-    }
-
-    // 4. Render Skills (Progress Bars)
-    const skillsProgressList = document.getElementById('skills-progress-list');
-    if (skillsProgressList) {
-      skillsProgressList.innerHTML = skills.map(skill => `
-        <li class="skills-item">
-          <div class="title-wrapper">
-            <h5 class="h5">${skill.name}</h5>
-            <data value="${skill.level.replace('%', '')}">${skill.level}</data>
-          </div>
-          <div class="skill-progress-bg">
-            <div class="skill-progress-fill" style="width: ${skill.level}"></div>
-          </div>
-        </li>
-      `).join('');
-    }
-
-    // 5. Render Resume (Education)
-    const eduList = document.getElementById('education-list');
-    if (eduList) {
-      eduList.innerHTML = resume.education.map(edu => `
-        <li class="timeline-item">
-          <h4 class="h4 timeline-item-title">${edu.institution}</h4>
-          <span>${edu.date}</span>
-          <p class="timeline-text">${edu.description}</p>
-        </li>
-      `).join('');
-    }
-
-    // 6. Render Resume (Experience)
-    const expList = document.getElementById('experience-list');
-    if (expList) {
-      expList.innerHTML = resume.experience.map(exp => `
-        <li class="timeline-item">
-          <h4 class="h4 timeline-item-title">${exp.role} — ${exp.company}</h4>
-          <span>${exp.date}</span>
-          <p class="timeline-text">${exp.description}</p>
-        </li>
-      `).join('');
-    }
-
-    // 7. Render Projects
+    // 2. Render Projects
     const projectsList = document.getElementById('projects-list');
     if (projectsList) {
       projectsList.innerHTML = projects.map(proj => `
@@ -158,7 +82,7 @@ async function loadPortfolioData() {
       `).join('');
     }
 
-    // 8. Render Certificates
+    // 3. Render Certificates
     const certList = document.getElementById('certificates-list');
     if (certList) {
       certList.innerHTML = certificates.map(cert => `
@@ -177,15 +101,17 @@ async function loadPortfolioData() {
       `).join('');
     }
 
-    // 9. Generate Filter Categories safely
+    // 4. Generate Filter Categories safely
     const rawCategories = [...new Set(certificates.map(c => c.category))];
     const categories = ["all", ...rawCategories];
     
     const filterList = document.getElementById('certificate-filter-list');
     if (filterList) {
       filterList.innerHTML = categories.map((cat, index) => {
+        // Use a better display name (e.g., intel a.i -> Intel A.I)
         let displayCat = cat.replace(/\b\w/g, l => l.toUpperCase());
-        if (cat === "intel a.i") displayCat = "Intel A.I";
+        if (cat === "intel a.i") displayCat = "Intel A.I"; // Special cases
+        
         return `
           <li class="filter-item">
             <button class="${index === 0 ? 'active' : ''}" data-filter-btn>${displayCat}</button>
@@ -207,7 +133,7 @@ async function loadPortfolioData() {
       }).join('');
     }
 
-    // 10. Initialize Filters
+    // 5. Initialize Filters after DOM populates
     initializeFilters();
 
   } catch (error) {
@@ -265,7 +191,7 @@ function initializeFilters() {
 }
 
 // Call the load function on startup
-loadPortfolioData();
+loadCertificatesAndProjects();
 
 // contact form variables (keep existing)
 const form = document.querySelector("[data-form]");
