@@ -415,9 +415,17 @@ function initParticles() {
     }
 
     draw() {
+      const colorRatio = this.x / canvas.width;
+      // Interpolate between Purple (left) and Cyan (right)
+      // Purple: hsl(280, 100%, 65%) -> Cyan: hsl(190, 100%, 55%)
+      const h = 280 - (90 * colorRatio);
+      const s = 100;
+      const l = 65 - (10 * colorRatio);
+      
+      this.color = `hsla(${h}, ${s}%, ${l}%, 0.7)`;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0, 230, 255, 0.7)"; // Brighter Cyan
+      ctx.fillStyle = this.color;
       ctx.fill();
     }
   }
@@ -444,7 +452,13 @@ function initParticles() {
 
         if (dist < connectionDistance) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(0, 230, 255, ${0.8 * (1 - dist / connectionDistance)})`;
+          // Use a mix of both particle colors for the line
+          const colorRatio = ((p1.x + p2.x) / 2) / canvas.width;
+          const h = 280 - (90 * colorRatio);
+          const s = 100;
+          const l = 65 - (10 * colorRatio);
+          
+          ctx.strokeStyle = `hsla(${h}, ${s}%, ${l}%, ${0.5 * (1 - dist / connectionDistance)})`;
           ctx.lineWidth = 0.8;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
@@ -454,6 +468,7 @@ function initParticles() {
     }
     requestAnimationFrame(animate);
   }
+
 
 
   createParticles();
