@@ -584,17 +584,15 @@ main {
 
 .navbar {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  background: hsla(240, 5%, 10%, 0.7);
-  backdrop-filter: blur(12px) saturate(150%);
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
-  border-radius: 50px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  padding: 0 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: hsla(240, 1%, 17%, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--jet);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-2);
+  z-index: 5;
 }
 
 .navbar-list {
@@ -607,16 +605,14 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: 500;
-  padding: 15px 12px;
-  transition: all var(--transition-1);
+  font-size: var(--fs-8);
+  padding: 20px 7px;
+  transition: color var(--transition-1);
 }
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: var(--white-1);
-  text-shadow: 0 0 10px var(--orange-yellow-crayola);
+  color: var(--light-gray-70);
 }
 
 .navbar-link.active {
