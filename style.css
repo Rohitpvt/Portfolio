@@ -357,7 +357,7 @@ main {
   object-fit: cover;
   display: block;
   border: 2px solid var(--white-1);
-  content: url("./images/my-profile.jpg");
+  content: url("./images/my-profile.webp");
   transition: transform 0.6s ease-in-out;
   backface-visibility: hidden;
   will-change: transform;
@@ -377,11 +377,11 @@ main {
   }
   50% {
     transform: rotateY(90deg);
-    content: url("./images/my-avatar.png");
+    content: url("./images/my-avatar.webp");
   }
   100% {
     transform: rotateY(0deg);
-    content: url("./images/my-avatar.png");
+    content: url("./images/my-avatar.webp");
   }
 }
 
@@ -391,11 +391,11 @@ main {
   }
   50% {
     transform: rotateY(-90deg);
-    content: url("./images/my-profile.jpg");
+    content: url("./images/my-profile.webp");
   }
   100% {
     transform: rotateY(0deg);
-    content: url("./images/my-profile.jpg");
+    content: url("./images/my-profile.webp");
   }
 }
 
@@ -2444,4 +2444,63 @@ textarea.form-input::-webkit-resizer {
   .timeline-text {
     max-width: 700px;
   }
+}
+
+
+/*-----------------------------------*\
+  #ADVANCED UI & AESTHETICS (REVEAL, GLASS, BACKGROUND)
+\*-----------------------------------*/
+
+/* Dynamic Breathing Background */
+body {
+  background: radial-gradient(circle at 50% 50%, var(--onyx) 0%, var(--smoky-black) 100%);
+  background-size: 200% 200%;
+  animation: breathe 15s ease infinite backwards;
+}
+
+@keyframes breathe {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Glassmorphism Classes */
+.sidebar, .navbar, .content-card, .testimonials-modal {
+  background: hsla(240, 1%, 17%, 0.45) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+.avatar-box, .service-item, .project-item, .blog-post-item {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Card Elevations (Liftoff) */
+.service-item:hover, .project-item:hover, .blog-post-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px hsla(45, 100%, 72%, 0.1);
+  border-color: hsla(45, 100%, 72%, 0.3);
+}
+
+/* Spin Icon */
+@keyframes spin { 
+  100% { transform: rotate(360deg); } 
+}
+.spin-icon { 
+  animation: spin 1s linear infinite; 
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  visibility: hidden;
+}
+
+.reveal.scrolled {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
