@@ -382,7 +382,7 @@ function initParticles() {
   const ctx = canvas.getContext("2d");
 
   let particles = [];
-  const particleCount = 60;
+  const particleCount = 100;
   const connectionDistance = 150;
 
   function resize() {
@@ -403,7 +403,7 @@ function initParticles() {
       this.y = Math.random() * canvas.height;
       this.vx = (Math.random() - 0.5) * 0.5;
       this.vy = (Math.random() - 0.5) * 0.5;
-      this.radius = Math.random() * 2;
+      this.radius = Math.random() * 3;
     }
 
     update() {
@@ -417,7 +417,7 @@ function initParticles() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0, 230, 255, 0.5)"; // Cyan
+      ctx.fillStyle = "rgba(0, 230, 255, 0.7)"; // Brighter Cyan
       ctx.fill();
     }
   }
@@ -444,8 +444,8 @@ function initParticles() {
 
         if (dist < connectionDistance) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(0, 230, 255, ${1 - dist / connectionDistance})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(0, 230, 255, ${0.8 * (1 - dist / connectionDistance)})`;
+          ctx.lineWidth = 0.8;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -454,6 +454,7 @@ function initParticles() {
     }
     requestAnimationFrame(animate);
   }
+
 
   createParticles();
   animate();
