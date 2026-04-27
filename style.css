@@ -1160,6 +1160,29 @@ main {
   box-shadow: 0 0 0 4px var(--jet);
 }
 
+.resume-modal .modal-content {
+  max-width: 600px;
+}
+
+.resume-modal .modal-title {
+  margin-bottom: 10px;
+  color: var(--orange-yellow-crayola);
+}
+
+.resume-modal time {
+  display: block;
+  color: var(--vegas-gold);
+  margin-bottom: 15px;
+  font-size: var(--fs-7);
+}
+
+.resume-modal .modal-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
+
+
 .timeline-text {
   color: var(--light-gray);
   font-weight: var(--fw-300);

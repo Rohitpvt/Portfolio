@@ -1,0 +1,36 @@
+{
+  "education": [
+    {
+      "title": "CHRIST (Deemed To Be University)",
+      "date": "2025 — Present",
+      "description": "Pursuing Master of Computer Application (MCA) focused on software development and emerging technologies.",
+      "details": "Currently focusing on advanced data structures, algorithm design, and modern web frameworks. Active participant in technical workshops and hackathons."
+    },
+    {
+      "title": "Vivekananda Institute Of Professional Studies, Delhi",
+      "date": "2021 — 2024",
+      "description": "Completed Bachelor of Computer Application (BCA) in programming, database systems, and software engineering with hands-on project experience.",
+      "details": "CGPA: 8.5/10. Core subjects included Java, C++, SQL, and Web Development. Lead developer for the final year project 'Online Voting System'."
+    },
+    {
+      "title": "Darbari Lal DAV Model School, Delhi",
+      "date": "2005 — 2021",
+      "description": "Completed Senior Secondary Education focusing on core subjects with an emphasis on analytical and computer skills.",
+      "details": "Specialized in Computer Science and Mathematics. Developed early interest in programming through school labs."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Certification Intern — Corizo",
+      "date": "August 2024 – October 2024",
+      "description": "Developed a secure and user-friendly online voting Android app using Flutter and Dart. Built a tech gadgets e-commerce website.",
+      "details": "• Created responsive UI for Online Voting App using Flutter.\n• Integrated Firebase for real-time data sync and secure authentication.\n• Built full-stack e-commerce features including cart management and admin dashboard.\n• Collaborated with mentors to optimize application performance."
+    },
+    {
+      "title": "Academic Projects",
+      "date": "September 2023 — May 2024",
+      "description": "Developed a Python-based AI Desktop Assistant integrating OpenAI API and Google Gemini.",
+      "details": "• Designed GUI using CustomTkinter.\n• Implemented voice command recognition and text-to-speech.\n• Integrated DALL-E and Gemini Pro for dynamic AI responses and image generation.\n• Optimized codebase for low latency response."
+    }
+  ]
+}

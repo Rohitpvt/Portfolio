@@ -554,46 +554,8 @@
             <h3 class="h3">Education</h3>
           </div>
 
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">
-                CHRIST (Deemed to be University)
-              </h4>
-
-              <span>2025 — Present</span>
-
-              <p class="timeline-text">
-                Pursuing Master of Computer Application (MCA) focused on
-                software development and emerging technologies.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">
-                Vivekananda Institute of Professional Studies, Delhi
-              </h4>
-
-              <span>2021 — 2024</span>
-
-              <p class="timeline-text">
-                Completed Bachelor of Computer Application (BCA) in
-                programming, database systems, and software engineering with
-                hands-on project experience.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">
-                Darbari Lal DAV Model School, Delhi
-              </h4>
-
-              <span>2005 — 2021</span>
-
-              <p class="timeline-text">
-                Completed Senior Secondary Education focusing on core subjects
-                with an emphasis on analytical and computer skills.
-              </p>
-            </li>
+          <ol class="timeline-list" id="education-list">
+            <!-- Rendered dynamically from script.js -->
           </ol>
         </section>
 
@@ -606,61 +568,26 @@
             <h3 class="h3">Experience</h3>
           </div>
 
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">
-                Certification Intern — Corizo
-              </h4>
-
-              <span>August 2024 – October 2024</span>
-
-              <p class="timeline-text">
-                Developed a secure and user-friendly online voting Android app
-                using Flutter and Dart, featuring state-wise election screens
-                and real-time results with Firebase backend integration.
-              </p>
-              <br />
-              <p class="timeline-text">
-                Built a tech gadgets e-commerce website with secure
-                authentication, cart management, order processing, and an
-                admin dashboard for inventory and order tracking.
-              </p>
-              <br />
-              <p class="timeline-text">
-                Collaborated on backend data management and ensured robust
-                user authentication and data security features across
-                projects.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Academic Projects</h4>
-
-              <span>September 2023 — May 2024</span>
-
-              <p class="timeline-text">
-                Developed a Python-based AI Desktop Assistant integrating
-                OpenAI API and Google Gemini for voice control, AI image
-                generation, and gaming modules with a focus on usability and
-                performance optimization.
-              </p>
-            </li>
-
-            <!--
-                <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Web designer</h4>
-
-                <span>2010 — 2013</span>
-
-                <p class="timeline-text">
-                  Nemo enims ipsam voluptatem, blanditiis praesentium voluptum
-                  delenit atque corrupti, quos dolores et quas molestias
-                  exceptur.
-                </p>
-                </li>
-                -->
+          <ol class="timeline-list" id="experience-list">
+            <!-- Rendered dynamically from script.js -->
           </ol>
         </section>
+
+        <!-- Dynamic Resume Modal (Global) -->
+        <div class="modal-container" data-resume-modal-container>
+          <div class="overlay" data-overlay></div>
+          <section class="testimonials-modal resume-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-content">
+              <h4 class="h4 modal-title" data-modal-title></h4>
+              <time data-modal-date></time>
+              <div class="modal-text" data-modal-text></div>
+            </div>
+          </section>
+        </div>
+
 
         <section class="skill">
           <h3 class="h3 skills-title">My skills</h3>

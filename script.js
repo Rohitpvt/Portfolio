@@ -104,6 +104,43 @@ async function loadCertificatesAndProjects() {
       `).join('');
     }
 
+    // 4. Render Resume (Education & Experience)
+    fetch('./data/resume.json')
+      .then(res => res.json())
+      .then(data => {
+        const eduList = document.getElementById('education-list');
+        const expList = document.getElementById('experience-list');
+
+        if (eduList) {
+          eduList.innerHTML = data.education.map((item, index) => `
+            <li class="timeline-item" style="cursor: pointer;">
+              <h4 class="h4 timeline-item-title">${item.title}</h4>
+              <span>${item.date}</span>
+              <p class="timeline-text">${item.description}</p>
+            </li>
+          `).join('');
+          
+          eduList.querySelectorAll('.timeline-item').forEach((li, i) => {
+            li.addEventListener('click', () => openResumeModal(data.education[i]));
+          });
+        }
+
+        if (expList) {
+          expList.innerHTML = data.experience.map((item, index) => `
+            <li class="timeline-item" style="cursor: pointer;">
+              <h4 class="h4 timeline-item-title">${item.title}</h4>
+              <span>${item.date}</span>
+              <p class="timeline-text">${item.description}</p>
+            </li>
+          `).join('');
+
+          expList.querySelectorAll('.timeline-item').forEach((li, i) => {
+            li.addEventListener('click', () => openResumeModal(data.experience[i]));
+          });
+        }
+      });
+
+
     // 4. Generate Filter Categories safely
     const rawCategories = [...new Set(certificates.map(c => c.category))];
     const categories = ["all", ...rawCategories];
@@ -517,6 +554,37 @@ function initAvatarParallax() {
 }
 
 initAvatarParallax();
+
+/**
+ * Resume Modal Logic
+ */
+const resumeModalContainer = document.querySelector('[data-resume-modal-container]');
+const resumeModalCloseBtn = document.querySelector('[data-resume-modal-container] [data-modal-close-btn]');
+const resumeOverlay = document.querySelector('[data-resume-modal-container] [data-overlay]');
+
+const rsModalTitle = document.querySelector('[data-resume-modal-container] [data-modal-title]');
+const rsModalDate = document.querySelector('[data-resume-modal-container] [data-modal-date]');
+const rsModalText = document.querySelector('[data-resume-modal-container] [data-modal-text]');
+
+function openResumeModal(item) {
+  if (!resumeModalContainer || !rsModalTitle) return;
+  
+  rsModalTitle.innerHTML = item.title;
+  rsModalDate.innerHTML = item.date;
+  rsModalText.innerHTML = item.details.replace(/\n/g, '<br>');
+  
+  resumeModalContainer.classList.add('active');
+  resumeOverlay.classList.add('active');
+}
+
+const closeResumeModal = function () {
+  resumeModalContainer.classList.remove('active');
+  resumeOverlay.classList.remove('active');
+}
+
+resumeModalCloseBtn?.addEventListener('click', closeResumeModal);
+resumeOverlay?.addEventListener('click', closeResumeModal);
+
 
 
 
