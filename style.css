@@ -2705,3 +2705,59 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 }
+
+/*-----------------------------------*\
+  #QUICK LINKS SIDEBAR
+\*-----------------------------------*/
+
+.quick-links {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 10px;
+  background: hsla(240, 5%, 15%, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 100px;
+  box-shadow: var(--shadow-5);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.quick-link-item {
+  color: var(--light-gray-70);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.quick-link-item:hover {
+  background: var(--text-gradient-yellow);
+  color: #000;
+  transform: scale(1.2) translateX(-5px);
+  box-shadow: 0 0 15px hsla(45, 100%, 72%, 0.5);
+}
+
+.quick-link-separator {
+  width: 20px;
+  height: 1px;
+  background: hsla(0, 0%, 100%, 0.1);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .quick-links {
+    display: none;
+  }
+}
+
