@@ -912,80 +912,87 @@ main {
 }
 
 /**
- * #tech-stack (Bento Style)
+ * #tech-stack (Minimalist Row Style)
  */
 
 .tech-stack {
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .tech-stack-title {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .tech-stack-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 
 .tech-category {
-  background: hsla(240, 5%, 8%, 0.5);
-  backdrop-filter: blur(15px);
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid hsla(0, 0%, 100%, 0.05);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+  padding-bottom: 25px;
 }
 
-.tech-category:hover {
-  transform: translateY(-5px);
-  border-color: var(--orange-yellow-crayola);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+@media (min-width: 580px) {
+  .tech-category {
+    grid-template-columns: 200px 1fr;
+    align-items: flex-start;
+  }
 }
 
 .category-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
+  gap: 10px;
 }
 
 .category-header ion-icon {
-  font-size: 24px;
+  font-size: 18px;
   color: var(--orange-yellow-crayola);
-  background: hsla(45, 100%, 72%, 0.1);
-  padding: 8px;
-  border-radius: 10px;
+  opacity: 0.8;
 }
 
 .category-title {
   color: var(--white-1);
-  font-size: var(--fs-6);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-weight: var(--fw-600);
 }
 
 .tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 20px;
 }
 
 .tech-item {
-  color: var(--light-gray-70);
-  font-size: var(--fs-7);
-  background: hsla(0, 0%, 100%, 0.05);
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid hsla(0, 0%, 100%, 0.03);
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.tech-category:hover .tech-item {
-  color: var(--white-2);
+.tech-item:hover {
+  color: var(--orange-yellow-crayola);
+  transform: translateX(5px);
+  font-weight: var(--fw-400);
 }
+
+/* Add a dot separator between items */
+.tech-item:not(:last-child)::after {
+  content: "•";
+  margin-left: 20px;
+  color: hsla(0, 0%, 100%, 0.1);
+  pointer-events: none;
+}
+
 
 
 
