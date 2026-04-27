@@ -280,36 +280,45 @@ form.addEventListener("submit", async function (e) {
   formBtn.disabled = true;
 
   try {
-    const formData = new FormData(form);
+    const data = new FormData(form);
+    const body = JSON.stringify(Object.fromEntries(data.entries()));
+    
     const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
+      method: "POST",
+      body: body,
       headers: {
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     });
 
     if (response.ok) {
-      formBtn.innerHTML =
-        '<ion-icon name="checkmark-circle"></ion-icon><span>Message Sent!</span>';
-      
-      // Redirect to thankyou page after a short delay
+      formBtn.innerHTML = '<ion-icon name="checkmark-circle"></ion-icon><span>Sent!</span>';
+      form.reset();
       setTimeout(() => {
         window.location.href = "thankyou.html";
       }, 1500);
     } else {
-      throw new Error('Form submission failed');
+      const result = await response.json();
+      if (result.errors) {
+        throw new Error(result.errors.map(error => error.message).join(", "));
+      } else {
+        throw new Error("Oops! There was a problem submitting your form");
+      }
     }
   } catch (error) {
     console.error("Submission error:", error);
-    formBtn.innerHTML = '<ion-icon name="alert-circle-outline"></ion-icon><span>Error!</span>';
+    formBtn.innerHTML = '<ion-icon name="alert-circle-outline"></ion-icon><span>Try Again!</span>';
     formBtn.disabled = false;
+    
+    alert("Formspree Error: " + error.message + "\n\n(Note: Formspree usually blocks 'localhost' submissions. Try testing on the live site!)");
     
     setTimeout(() => {
       formBtn.innerHTML = originalContent;
-    }, 3000);
+    }, 4000);
   }
 });
+
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
