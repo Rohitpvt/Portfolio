@@ -60,25 +60,28 @@
   /**
    * typography
    */
-  /* font-family */
   --ff-inter: "Inter", sans-serif;
   --ff-outfit: "Outfit", sans-serif;
 
-  /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
+  /* typography scale */
+  --fs-1: 36px;
+  --fs-2: 28px;
+  --fs-3: 20px;
+  --fs-4: 17px;
+  --fs-5: 16px;
+  --fs-6: 15px;
+  --fs-7: 14px;
+  --fs-8: 12px;
 
   /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
+  --fw-default: 400;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
 
   /**
    * shadow
@@ -182,6 +185,7 @@ textarea {
 
 html {
   font-family: var(--ff-inter);
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6, .name {
@@ -204,6 +208,9 @@ h1, h2, h3, h4, h5, h6, .name {
 body {
   background: #050505;
   color: var(--light-gray);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
 }
@@ -357,25 +364,36 @@ article.active {
 .h5 {
   color: var(--white-2);
   text-transform: capitalize;
+  letter-spacing: -0.025em;
+  font-weight: var(--fw-semi);
 }
 
 .h2 {
   font-size: var(--fs-1);
+  line-height: 1.1;
 }
+
 .h3 {
   font-size: var(--fs-2);
+  line-height: 1.2;
 }
+
 .h4 {
-  font-size: var(--fs-4);
+  font-size: var(--fs-3);
 }
+
 .h5 {
-  font-size: var(--fs-7);
-  font-weight: var(--fw-500);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--light-gray-70);
 }
 
 .article-title {
   position: relative;
-  padding-bottom: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
 }
 
 .article-title::after {
@@ -537,19 +555,22 @@ main {
 
 .info-content .name {
   color: var(--white-2);
-  font-size: 29px;
-  font-weight: var(--fw-500);
-  letter-spacing: -0.25px;
+  font-size: var(--fs-1);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.04em;
+  line-height: 1;
   margin-bottom: 10px;
 }
 
 .info-content .title {
-  color: var(--white-1);
-  background: var(--onyx);
-  font-size: 13px;
-  font-weight: var(--fw-300);
+  color: var(--white-2);
+  background: hsla(240, 5%, 20%, 0.5);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   width: max-content;
-  padding: 3px 12px;
+  padding: 5px 12px;
   border-radius: 8px;
 }
 
