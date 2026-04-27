@@ -417,9 +417,7 @@ function initParticles() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0, 230, 255, 0.8)"; // Vivid Cyan
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = "rgba(0, 230, 255, 0.5)";
+      ctx.fillStyle = "rgba(0, 230, 255, 0.7)"; // Brighter Cyan
       ctx.fill();
     }
   }
@@ -448,8 +446,6 @@ function initParticles() {
           ctx.beginPath();
           ctx.strokeStyle = `rgba(0, 230, 255, ${0.8 * (1 - dist / connectionDistance)})`;
           ctx.lineWidth = 0.8;
-          ctx.shadowBlur = 5;
-          ctx.shadowColor = "rgba(0, 230, 255, 0.3)";
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -458,7 +454,6 @@ function initParticles() {
     }
     requestAnimationFrame(animate);
   }
-
 
 
   createParticles();
