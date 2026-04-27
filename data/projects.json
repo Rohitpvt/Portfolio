@@ -1,32 +1,63 @@
 [
   {
-    "title": "AI Destop Assistant with GUI",
-    "category": "AI Destop Assistant",
+    "title": "AI-Destop-Assistant-with-GUI",
+    "category": "AI Desktop Assistant",
     "date": "Sep 2023 - May 2024",
     "datetime": "2023-09-01",
     "description": "Developed a Python-based AI Assistant with AI Image Generation, Google Gemini integration, voice control, and gaming features, focusing on usability and performance optimization.",
     "image": "https://live.staticflickr.com/65535/54766829658_8544c35a9e_b.jpg",
-    "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI.git",
-    "tags": ["Python", "Gemini AI", "GUI", "Voice AI"]
+    "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI",
+    "tags": ["Python", "Google Gemini", "AI"]
   },
   {
-    "title": "E commerce Website",
-    "category": "E commerce Web",
+    "title": "AI Study Portal",
+    "category": "AI Educational Platform",
+    "date": "Nov 2024 - Jan 2025",
+    "datetime": "2024-11-01",
+    "description": "AI Academic Portal – A smart platform for students to access and share study materials, powered by AI for content validation and an intelligent chatbot for learning support.",
+    "image": "./images/study-portal.png",
+    "link": "https://github.com/Rohitpvt/Study-Portal",
+    "tags": ["Python", "Django", "AI"]
+  },
+  {
+    "title": "Car-Rental-System",
+    "category": "Web Application",
+    "date": "Dec 2024 - Feb 2025",
+    "datetime": "2024-12-01",
+    "description": "Scalable Car Rental platform featuring Google login, KYC verification flow, advanced filters, and booking system. Built with React, PHP, and MySQL.",
+    "image": "./images/car-rental.png",
+    "link": "https://github.com/Rohitpvt/Car-Rental-System",
+    "tags": ["React", "PHP", "MySQL", "JavaScript"]
+  },
+  {
+    "title": "E-commerce-Web",
+    "category": "E-commerce Platform",
     "date": "Sep 2024 - Nov 2024",
     "datetime": "2024-09-01",
     "description": "Developed a tech gadgets e-commerce site with secure authentication, cart management, and order processing, along with an admin dashboard for inventory and orders.",
     "image": "https://live.staticflickr.com/65535/54766843943_37cd4bee73_b.jpg",
-    "link": "https://github.com/Rohitpvt/E-commerce-Web.git",
-    "tags": ["Node.js", "React", "MongoDB", "Express"]
+    "link": "https://github.com/Rohitpvt/E-commerce-Web",
+    "tags": ["HTML", "CSS", "JavaScript"]
   },
   {
-    "title": "Online Voting System",
-    "category": "Voting System",
+    "title": "Online-Voting-System",
+    "category": "Mobile Application",
     "date": "Jul 2024 - Sep 2024",
     "datetime": "2024-07-01",
     "description": "Built a Flutter & Dart online voting app with secure authentication, state-wise election screens, and real-time results, using Firebase for backend and data management.",
     "image": "https://live.staticflickr.com/65535/54766607636_ddbfff0763_b.jpg",
-    "link": "https://github.com/Rohitpvt/Online-Voting-System.git",
-    "tags": ["Flutter", "Dart", "Firebase", "Auth"]
+    "link": "https://github.com/Rohitpvt/Online-Voting-System",
+    "tags": ["Flutter", "Dart", "Firebase"]
+  },
+  {
+    "title": "Modern Portfolio",
+    "category": "Web Design",
+    "date": "Jan 2025 - Present",
+    "datetime": "2025-01-01",
+    "description": "A premium, high-fidelity portfolio website showcasing technical skills and projects with a modern glassmorphic UI.",
+    "image": "./images/portfolio-new.png",
+    "link": "https://github.com/Rohitpvt/Portfolio",
+    "tags": ["HTML", "CSS", "JavaScript"]
   }
+  
 ]
