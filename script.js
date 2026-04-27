@@ -252,3 +252,19 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+/**
+ * Mouse Spotlight Effect
+ */
+const spotlight = document.querySelector(".mouse-spotlight");
+
+window.addEventListener("mousemove", (e) => {
+  if (spotlight) {
+    const x = e.clientX;
+    const y = e.clientY;
+    
+    // Smoothly update spotlight position
+    document.body.style.setProperty("--mouse-x", `${x}px`);
+    document.body.style.setProperty("--mouse-y", `${y}px`);
+  }
+});

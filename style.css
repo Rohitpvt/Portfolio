@@ -199,6 +199,29 @@ body {
   animation-delay: -7s !important;
 }
 
+.mouse-spotlight {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, hsla(190, 100%, 55%, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+  animation: none !important;
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+body:hover .mouse-spotlight {
+  opacity: 1;
+}
+
+body:not(:hover) .mouse-spotlight {
+  opacity: 0;
+}
+
 @keyframes floatAmbient {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(100px, 50px) scale(1.1); }
