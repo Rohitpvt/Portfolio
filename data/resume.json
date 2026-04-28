@@ -34,7 +34,7 @@
     }
   ],
   "skills_proficiency": [
-    { "name": "Python", "value": 95 },
+    { "name": "Python", "value": 85 },
     { "name": "React", "value": 85 },
     { "name": "JavaScript", "value": 80 },
     { "name": "Flutter/Dart", "value": 85 },
