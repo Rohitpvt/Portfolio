@@ -42,10 +42,11 @@
     { "name": "MySQL", "value": 80 }
   ],
   "tech_stack": {
-    "Programming Languages": ["Python", "C", "C++", "Java", "JavaScript"],
-    "AI & ML": ["OpenAI API", "Google Gemini", "NLP", "AI Image Generation"],
-    "Databases": ["Firebase", "MongoDB", "MySQL"],
-    "Web Development": ["HTML", "CSS", "React", "Node.js"],
-    "Mobile Development": ["Flutter", "Dart"]
+    "Programming Languages": ["Python", "C++", "C", "Java", "JavaScript", "Dart"],
+    "AI & ML": ["Generative AI", "NLP", "RAG", "AI Chatbots", "AI Image Generation", "LLM Integration (OpenAI, Google Gemini)", "FastAPI"],
+    "Databases & Backend": ["MongoDB", "MySQL", "Firebase", "REST APIs", "FastAPI", "PHP"],
+    "Mobile Development": ["Flutter", "Kotlin", "Android Studio"],
+    "Web Development": ["HTML", "CSS", "React.js", "Node.js", "Tailwind CSS", "Bootstrap", "Axios", "Vercel", "Git"],
+    "Soft Skills": ["Problem Solving", "Strategic Thinking"]
   }
 }

@@ -160,9 +160,10 @@ async function loadCertificatesAndProjects() {
         const categoryIcons = {
           "programming languages": "code-slash-outline",
           "ai & ml": "bulb-outline",
-          "databases": "server-outline",
+          "databases & backend": "server-outline",
           "web development": "globe-outline",
-          "mobile development": "phone-portrait-outline"
+          "mobile development": "phone-portrait-outline",
+          "soft skills": "people-outline"
         };
 
 
