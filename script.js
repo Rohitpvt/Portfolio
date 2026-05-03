@@ -50,14 +50,21 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
+// Global Data Variables for Recruiter Analyzer
+window.globalCertificates = [];
+window.globalProjects = [];
+window.globalResumeData = null;
+
 async function loadCertificatesAndProjects() {
   try {
     // 1. Fetch data
     const certRes = await fetch('./data/certificates.json');
     const certificates = await certRes.json();
+    window.globalCertificates = certificates;
     
     const projRes = await fetch('./data/projects.json');
     const projects = await projRes.json();
+    window.globalProjects = projects;
 
     // 2. Render Projects
     const projectsList = document.getElementById('projects-list');
@@ -108,6 +115,7 @@ async function loadCertificatesAndProjects() {
     fetch('./data/resume.json')
       .then(res => res.json())
       .then(data => {
+        window.globalResumeData = data;
         const eduList = document.getElementById('education-list');
         const expList = document.getElementById('experience-list');
 
@@ -718,9 +726,184 @@ function initSkillsMarquee() {
   startAnimation();
 }
 
-initSkillsMarquee();
+// --- Recruiter Fit Analyzer Logic ---
+document.addEventListener("DOMContentLoaded", () => {
+  const openModalBtn = document.getElementById("open-recruiter-modal-btn");
+  const modal = document.getElementById("recruiter-modal");
+  const closeBtn = document.getElementById("recruiter-close-btn");
+  const overlay = document.getElementById("recruiter-overlay");
+  const analyzeBtn = document.getElementById("recruiter-analyze-btn");
+  const textarea = document.getElementById("recruiter-input");
 
+  const stateInput = document.getElementById("recruiter-state-input");
+  const stateAnim = document.getElementById("recruiter-state-anim");
+  const stateResults = document.getElementById("recruiter-state-results");
+  const animText = document.getElementById("recruiter-anim-text");
 
+  const keywordDict = {
+    "python": "Python", "react": "React", "reactjs": "React", "react.js": "React",
+    "node": "Node.js", "nodejs": "Node.js", "node.js": "Node.js", "firebase": "Firebase",
+    "flutter": "Flutter", "dart": "Dart", "mongodb": "MongoDB", "mongo": "MongoDB",
+    "mysql": "MySQL", "sql": "SQL", "fastapi": "FastAPI", "api": "REST APIs",
+    "apis": "REST APIs", "backend": "Backend", "frontend": "Frontend",
+    "fullstack": "Full Stack", "full-stack": "Full Stack", "cloud": "Cloud Computing",
+    "aws": "AWS", "devops": "DevOps", "docker": "Docker", "kubernetes": "Kubernetes",
+    "ai": "Artificial Intelligence", "artificial intelligence": "Artificial Intelligence",
+    "machine learning": "Machine Learning", "ml": "Machine Learning", "nlp": "NLP",
+    "llm": "LLM", "generative ai": "Generative AI", "cybersecurity": "Cyber Security",
+    "cyber security": "Cyber Security", "javascript": "JavaScript", "js": "JavaScript",
+    "html": "HTML", "css": "CSS", "c++": "C++", "cpp": "C++", "java": "Java",
+    "c": "C", "c#": "C Sharp", "go": "GoLang", "golang": "GoLang", "data analysis": "Data Analysis"
+  };
 
+  function toggleRecruiterModal() {
+    if(!modal) return;
+    modal.classList.toggle("active");
+    if(!modal.classList.contains("active")) {
+      setTimeout(() => {
+        if(stateInput) stateInput.classList.add("active");
+        if(stateAnim) stateAnim.classList.remove("active");
+        if(stateResults) stateResults.classList.remove("active");
+        if(textarea) textarea.value = "";
+      }, 300);
+    }
+  }
 
+  if(openModalBtn) openModalBtn.addEventListener("click", toggleRecruiterModal);
+  if(closeBtn) closeBtn.addEventListener("click", toggleRecruiterModal);
+  if(overlay) overlay.addEventListener("click", toggleRecruiterModal);
 
+  if(analyzeBtn) {
+    analyzeBtn.addEventListener("click", () => {
+      if(!textarea) return;
+      const input = textarea.value.toLowerCase();
+      if(input.trim() === "") return;
+
+      if(stateInput) stateInput.classList.remove("active");
+      if(stateAnim) stateAnim.classList.add("active");
+
+      const texts = [
+        "Reading role requirements...",
+        "Matching skills...",
+        "Finding relevant projects...",
+        "Preparing recruiter pitch..."
+      ];
+      let i = 0;
+      let textInterval;
+      if(animText) {
+        textInterval = setInterval(() => {
+          i++;
+          if(i < texts.length) animText.textContent = texts[i];
+        }, 800);
+      }
+
+      setTimeout(() => {
+        if(textInterval) clearInterval(textInterval);
+        processFit(input);
+        if(stateAnim) stateAnim.classList.remove("active");
+        if(stateResults) stateResults.classList.add("active");
+      }, 3200);
+    });
+  }
+
+  function processFit(input) {
+    let matchedKeywords = new Set();
+    for (let key in keywordDict) {
+      let regex = new RegExp("\\b" + key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "\\b", "i");
+      if(regex.test(input)) matchedKeywords.add(keywordDict[key]);
+    }
+    
+    let matchesArray = Array.from(matchedKeywords);
+
+    let matchedProjects = [];
+    if(window.globalProjects) {
+      window.globalProjects.forEach(proj => {
+        let isMatch = false;
+        let projText = (proj.title + " " + proj.description + " " + (proj.tags||[]).join(" ")).toLowerCase();
+        matchesArray.forEach(kw => {
+          if(projText.includes(kw.toLowerCase())) isMatch = true;
+        });
+        if(isMatch) matchedProjects.push(proj);
+      });
+    }
+
+    let matchedCerts = [];
+    if(window.globalCertificates) {
+      window.globalCertificates.forEach(cert => {
+        let isMatch = false;
+        let certText = (cert.title + " " + cert.category).toLowerCase();
+        matchesArray.forEach(kw => {
+          if(certText.includes(kw.toLowerCase())) isMatch = true;
+        });
+        if(isMatch) matchedCerts.push(cert);
+      });
+    }
+
+    let missingSkills = [];
+    const myCoreSkills = ["Python", "React", "Firebase", "Flutter", "Dart", "MongoDB", "MySQL", "FastAPI", "REST APIs", "HTML", "CSS", "JavaScript", "Java", "C++", "C", "Machine Learning", "Artificial Intelligence", "Generative AI"];
+    matchesArray.forEach(kw => {
+      if(!myCoreSkills.includes(kw)) missingSkills.push(kw);
+    });
+
+    let pitchHTML = ``;
+    if(matchesArray.length > 0) {
+      pitchHTML += `<p>Based on your requirements, Rohit has a strong foundation aligned with this role. His portfolio shows practical exposure through related projects and certifications, specifically in <strong>${matchesArray.slice(0,4).join(", ")}</strong>.</p>`;
+    } else {
+      pitchHTML += `<p>Rohit has a versatile and highly adaptable skill set. While the specific keywords weren't directly matched in his core projects, his strong foundation in software engineering, frontend/backend architecture, and rapid learning ability make him a strong fit to ramp up quickly for this role.</p>`;
+    }
+
+    if(missingSkills.length > 0 && matchesArray.length > 0) {
+      pitchHTML += `<p style="margin-top: 10px; color: var(--light-gray);">For requirements like <em>${missingSkills.slice(0,3).join(", ")}</em>, Rohit demonstrates strong learning speed and adaptability, making these excellent growth areas where he can quickly deliver value.</p>`;
+    }
+
+    let skillsHTML = matchesArray.length > 0 
+      ? `<div><h4 class="fit-section-title">Matching Skills</h4><div class="matched-skills-list">` + matchesArray.map(kw => `<span class="matched-skill-chip">${kw}</span>`).join('') + `</div></div>`
+      : ``;
+
+    let projectsHTML = matchedProjects.length > 0
+      ? `<div><h4 class="fit-section-title">Relevant Projects</h4><div class="matched-projects">` + matchedProjects.slice(0,3).map(proj => `
+          <a href="${proj.link}" target="_blank" class="match-card">
+            <img src="${proj.image}" alt="${proj.title}" class="match-img">
+            <div class="match-info">
+              <h4>${proj.title}</h4>
+              <p>${proj.category}</p>
+            </div>
+          </a>
+        `).join('') + `</div></div>`
+      : ``;
+
+    let certsHTML = matchedCerts.length > 0
+      ? `<div><h4 class="fit-section-title">Relevant Certificates</h4><div class="matched-certs">` + matchedCerts.slice(0,3).map(cert => `
+          <a href="${cert.link}" target="_blank" class="match-card">
+            <img src="${cert.image}" alt="${cert.title}" class="match-img">
+            <div class="match-info">
+              <h4>${cert.title}</h4>
+              <p>${cert.issuer}</p>
+            </div>
+          </a>
+        `).join('') + `</div></div>`
+      : ``;
+
+    let ctaHTML = `
+      <div class="fit-cta-group">
+        <button class="fit-cta-btn primary" onclick="document.getElementById('recruiter-close-btn').click(); document.querySelector('[data-nav-link=\\'portfolio\\']').click(); window.scrollTo(0,0);">
+          <ion-icon name="folder-outline"></ion-icon> View All Projects
+        </button>
+        <button class="fit-cta-btn secondary" onclick="document.getElementById('recruiter-close-btn').click(); document.querySelector('[data-nav-link=\\'contact\\']').click(); window.scrollTo(0,0);">
+          <ion-icon name="mail-outline"></ion-icon> Contact Rohit
+        </button>
+      </div>
+    `;
+
+    if(stateResults) {
+      stateResults.innerHTML = `
+        <h3 class="h3 modal-title" style="margin-bottom: 20px;">Role Fit Summary</h3>
+        <div class="fit-pitch">${pitchHTML}</div>
+        ${skillsHTML}
+        ${projectsHTML}
+        ${certsHTML}
+        ${ctaHTML}
+      `;
+    }
+  }
+});

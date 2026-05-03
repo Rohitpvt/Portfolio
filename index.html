@@ -306,6 +306,18 @@
           </ul>
         </section>
 
+        <!-- Recruiter Fit Analyzer CTA -->
+        <section class="recruiter-cta-card content-card">
+          <div class="cta-content">
+            <h3 class="h3 cta-title">Recruiter Fit Analyzer</h3>
+            <p class="cta-subtitle">Paste your role requirements and get a personalized fit summary.</p>
+          </div>
+          <button class="form-btn" id="open-recruiter-modal-btn">
+            <ion-icon name="analytics-outline"></ion-icon>
+            <span>Analyze My Fit</span>
+          </button>
+        </section>
+
         <!-- Technical Skills Section -->
         <section class="tech-stack">
           <h3 class="h3 tech-stack-title">Technical Skills</h3>
@@ -710,6 +722,41 @@
           </form>
         </section>
       </article>
+      <!-- Recruiter Fit Analyzer Modal -->
+      <div class="modal-container recruiter-modal-container" id="recruiter-modal">
+        <div class="overlay recruiter-overlay" id="recruiter-overlay"></div>
+        <section class="recruiter-modal-content content-card">
+          <button class="modal-close-btn" id="recruiter-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          
+          <!-- State 1: Input -->
+          <div id="recruiter-state-input" class="recruiter-state active">
+            <h3 class="h3 modal-title">Recruiter Fit Analyzer</h3>
+            <p class="modal-text">Paste your job requirements, skills, or full role description below. I will analyze my portfolio to show you why I'm a strong fit.</p>
+            <textarea id="recruiter-input" class="form-input recruiter-textarea" placeholder="e.g. Looking for a Python developer with AI, backend API, Firebase and React knowledge..."></textarea>
+            <button class="form-btn" id="recruiter-analyze-btn">
+              <ion-icon name="sparkles-outline"></ion-icon>
+              <span>Analyze My Fit</span>
+            </button>
+          </div>
+
+          <!-- State 2: Animation -->
+          <div id="recruiter-state-anim" class="recruiter-state">
+            <div class="ai-scanner">
+              <div class="scanner-line"></div>
+              <ion-icon name="aperture-outline" class="scanner-icon"></ion-icon>
+            </div>
+            <h3 class="h3 modal-title" id="recruiter-anim-text">Reading role requirements...</h3>
+          </div>
+
+          <!-- State 3: Results -->
+          <div id="recruiter-state-results" class="recruiter-state has-scrollbar">
+            <!-- Content dynamically injected here -->
+          </div>
+        </section>
+      </div>
+
     </div>
   </main>
 
