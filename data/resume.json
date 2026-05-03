@@ -21,6 +21,12 @@
   ],
   "experience": [
     {
+      "title": "AI Study Portal — MCA (Intel AI Project)",
+      "date": "December 2025 — May 2026",
+      "description": "AI Study Portal is a production-ready, cloud-hosted academic platform with role-based access for Students, Teachers, and Admins, featuring materials, classrooms, notifications, and analytics workflows.",
+      "details": "• Built a production-ready, cloud-hosted academic platform using FastAPI and React.js.\n• Implemented role-based access control for Students, Teachers, and Admins.\n• Developed features for materials management, classrooms, notifications, and analytics workflows.\n• Integrated AI-powered chatbot and RAG-based document retrieval for intelligent study assistance.\n• Deployed on cloud infrastructure with scalable architecture and real-time data sync."
+    },
+    {
       "title": "Certification Intern — Corizo",
       "date": "August 2024 — March 2025",
       "description": "Built a Flutter & Dart-based voting app with secure auth and real-time results using Firebase, and developed an e-commerce platform with authentication, cart, order processing, and admin dashboard.",
@@ -31,12 +37,6 @@
       "date": "September 2023 — May 2024",
       "description": "Developed a Python-based AI Assistant with AI Image Generation, Google Gemini integration, voice control, and gaming features, focusing on usability and performance optimization.",
       "details": "• Developed a Python-based AI Desktop Assistant integrating OpenAI and Google Gemini APIs.\n• Implemented AI Image Generation using DALL-E for dynamic visual content creation.\n• Built voice control functionality with speech recognition and text-to-speech.\n• Added gaming features and interactive UI using CustomTkinter.\n• Focused on usability and performance optimization for low-latency responses."
-    },
-    {
-      "title": "AI Study Portal — MCA (Intel AI Project)",
-      "date": "September 2023 — May 2024",
-      "description": "AI Study Portal is a production-ready, cloud-hosted academic platform with role-based access for Students, Teachers, and Admins, featuring materials, classrooms, notifications, and analytics workflows.",
-      "details": "• Built a production-ready, cloud-hosted academic platform using FastAPI and React.js.\n• Implemented role-based access control for Students, Teachers, and Admins.\n• Developed features for materials management, classrooms, notifications, and analytics workflows.\n• Integrated AI-powered chatbot and RAG-based document retrieval for intelligent study assistance.\n• Deployed on cloud infrastructure with scalable architecture and real-time data sync."
     }
   ],
   "skills_proficiency": [
