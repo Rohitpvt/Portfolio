@@ -586,12 +586,12 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
+  background: transparent;
   border: 3px solid var(--orange-yellow-crayola);
   border-radius: 50%;
   box-shadow: var(--shadow-3);
   overflow: hidden;
-  padding: 4px;
+  padding: 0;
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
@@ -601,7 +601,6 @@ main {
 .avatar-box:hover {
   transform: scale(1.05);
   box-shadow: var(--shadow-5);
-  background: var(--white-1);
 }
 
 .avatar-box img {
@@ -610,9 +609,9 @@ main {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  border: 2px solid var(--white-1);
+  border: none;
   content: url("./images/my-profile.jpg");
-  transform: scale(1.1);
+  transform: scale(1);
   transition: transform 0.6s ease-out;
   backface-visibility: hidden;
   will-change: transform;
