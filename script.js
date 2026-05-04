@@ -766,6 +766,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if(stateResults) stateResults.classList.remove("active");
         if(textarea) textarea.value = "";
       }, 300);
+    } else {
+      setTimeout(() => {
+        if(textarea) textarea.focus();
+      }, 100);
     }
   }
 
@@ -802,7 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
         processFit(input);
         if(stateAnim) stateAnim.classList.remove("active");
         if(stateResults) stateResults.classList.add("active");
-      }, 3200);
+      }, Math.floor(Math.random() * 1500) + 2500);
     });
   }
 
@@ -814,6 +818,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     let matchesArray = Array.from(matchedKeywords);
+
+    // Broad Category Enhancements
+    if (matchesArray.includes("Frontend")) {
+      ["HTML", "CSS", "JavaScript", "React"].forEach(kw => {
+        if (!matchesArray.includes(kw)) matchesArray.push(kw);
+      });
+    }
+    if (matchesArray.includes("Backend")) {
+      ["Node.js", "Python", "MySQL", "MongoDB", "REST APIs"].forEach(kw => {
+        if (!matchesArray.includes(kw)) matchesArray.push(kw);
+      });
+    }
+    if (matchesArray.includes("Artificial Intelligence") || matchesArray.includes("Machine Learning")) {
+      ["Python", "Generative AI"].forEach(kw => {
+        if (!matchesArray.includes(kw)) matchesArray.push(kw);
+      });
+    }
 
     let matchedProjects = [];
     if(window.globalProjects) {
@@ -886,10 +907,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let ctaHTML = `
       <div class="fit-cta-group">
-        <button class="fit-cta-btn primary" onclick="document.getElementById('recruiter-close-btn').click(); document.querySelector('[data-nav-link=\\'portfolio\\']').click(); window.scrollTo(0,0);">
+        <button class="fit-cta-btn primary" onclick="document.getElementById('recruiter-close-btn').click(); Array.from(document.querySelectorAll('[data-nav-link]')).find(el => el.textContent.toLowerCase() === 'projects').click(); window.scrollTo(0,0);">
           <ion-icon name="folder-outline"></ion-icon> View All Projects
         </button>
-        <button class="fit-cta-btn secondary" onclick="document.getElementById('recruiter-close-btn').click(); document.querySelector('[data-nav-link=\\'contact\\']').click(); window.scrollTo(0,0);">
+        <button class="fit-cta-btn secondary" onclick="document.getElementById('recruiter-close-btn').click(); Array.from(document.querySelectorAll('[data-nav-link]')).find(el => el.textContent.toLowerCase() === 'contact').click(); window.scrollTo(0,0);">
           <ion-icon name="mail-outline"></ion-icon> Contact Rohit
         </button>
       </div>
