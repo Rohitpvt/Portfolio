@@ -726,6 +726,8 @@ function initSkillsMarquee() {
   startAnimation();
 }
 
+initSkillsMarquee();
+
 // --- Recruiter Fit Analyzer Logic ---
 document.addEventListener("DOMContentLoaded", () => {
   const openModalBtn = document.getElementById("open-recruiter-modal-btn");
