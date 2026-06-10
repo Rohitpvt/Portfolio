@@ -40,19 +40,76 @@
     }
   ],
   "skills_proficiency": [
-    { "name": "Python", "value": 85 },
-    { "name": "React", "value": 85 },
-    { "name": "JavaScript", "value": 80 },
-    { "name": "Flutter/Dart", "value": 85 },
-    { "name": "Node.js", "value": 75 },
-    { "name": "MySQL", "value": 80 }
+    {
+      "name": "Python",
+      "value": 85
+    },
+    {
+      "name": "React",
+      "value": 75
+    },
+    {
+      "name": "JavaScript",
+      "value": 70
+    },
+    {
+      "name": "Flutter/Dart",
+      "value": 65
+    },
+    {
+      "name": "Node.js",
+      "value": 70
+    },
+    {
+      "name": "MySQL",
+      "value": 70
+    }
   ],
   "tech_stack": {
-    "Programming Languages": ["Python", "C++", "C", "Java", "JavaScript", "Dart"],
-    "AI & ML": ["Generative AI", "NLP", "RAG", "AI Chatbots", "AI Image Generation", "LLM Integration (OpenAI, Google Gemini)", "FastAPI"],
-    "Databases & Backend": ["MongoDB", "MySQL", "Firebase", "REST APIs", "FastAPI", "PHP"],
-    "Mobile Development": ["Flutter", "Kotlin", "Android Studio"],
-    "Web Development": ["HTML", "CSS", "React.js", "Node.js", "Tailwind CSS", "Bootstrap", "Axios", "Vercel", "Git"],
-    "Soft Skills": ["Problem Solving", "Strategic Thinking"]
+    "Programming Languages": [
+      "Python",
+      "C++",
+      "C",
+      "Java",
+      "JavaScript",
+      "Dart"
+    ],
+    "AI & ML": [
+      "Generative AI",
+      "NLP",
+      "RAG",
+      "AI Chatbots",
+      "AI Image Generation",
+      "LLM Integration (OpenAI, Google Gemini)",
+      "FastAPI"
+    ],
+    "Databases & Backend": [
+      "MongoDB",
+      "MySQL",
+      "Firebase",
+      "REST APIs",
+      "FastAPI",
+      "PHP"
+    ],
+    "Mobile Development": [
+      "Flutter",
+      "Kotlin",
+      "Android Studio"
+    ],
+    "Web Development": [
+      "HTML",
+      "CSS",
+      "React.js",
+      "Node.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Axios",
+      "Vercel",
+      "Git"
+    ],
+    "Soft Skills": [
+      "Problem Solving",
+      "Strategic Thinking"
+    ]
   }
 }

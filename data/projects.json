@@ -7,7 +7,11 @@
     "description": "Developed a Python-based AI Assistant with AI Image Generation, Google Gemini integration, voice control, and gaming features, focusing on usability and performance optimization.",
     "image": "https://live.staticflickr.com/65535/54766829658_8544c35a9e_b.jpg",
     "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI",
-    "tags": ["Python", "Google Gemini", "AI"]
+    "tags": [
+      "Python",
+      "Google Gemini",
+      "AI"
+    ]
   },
   {
     "title": "AI Study Portal",
@@ -17,7 +21,11 @@
     "description": "AI Academic Portal – A smart platform for students to access and share study materials, powered by AI for content validation and an intelligent chatbot for learning support.",
     "image": "./images/study-portal.png",
     "link": "https://github.com/Rohitpvt/Study-Portal",
-    "tags": ["Python", "Django", "AI"]
+    "tags": [
+      "Python",
+      "Django",
+      "AI"
+    ]
   },
   {
     "title": "Car-Rental-System",
@@ -27,7 +35,12 @@
     "description": "Scalable Car Rental platform featuring Google login, KYC verification flow, advanced filters, and booking system. Built with React, PHP, and MySQL.",
     "image": "./images/car-rental.png",
     "link": "https://github.com/Rohitpvt/Car-Rental-System",
-    "tags": ["React", "PHP", "MySQL", "JavaScript"]
+    "tags": [
+      "React",
+      "PHP",
+      "MySQL",
+      "JavaScript"
+    ]
   },
   {
     "title": "E-commerce-Web",
@@ -37,7 +50,11 @@
     "description": "Developed a tech gadgets e-commerce site with secure authentication, cart management, and order processing, along with an admin dashboard for inventory and orders.",
     "image": "https://live.staticflickr.com/65535/54766843943_37cd4bee73_b.jpg",
     "link": "https://github.com/Rohitpvt/E-commerce-Web",
-    "tags": ["HTML", "CSS", "JavaScript"]
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   },
   {
     "title": "Online-Voting-System",
@@ -47,7 +64,11 @@
     "description": "Built a Flutter & Dart online voting app with secure authentication, state-wise election screens, and real-time results, using Firebase for backend and data management.",
     "image": "https://live.staticflickr.com/65535/54766607636_ddbfff0763_b.jpg",
     "link": "https://github.com/Rohitpvt/Online-Voting-System",
-    "tags": ["Flutter", "Dart", "Firebase"]
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ]
   },
   {
     "title": "Modern Portfolio",
@@ -57,7 +78,10 @@
     "description": "A premium, high-fidelity portfolio website showcasing technical skills and projects with a modern glassmorphic UI.",
     "image": "./images/portfolio-new.png",
     "link": "https://github.com/Rohitpvt/Portfolio",
-    "tags": ["HTML", "CSS", "JavaScript"]
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
-  
 ]
