@@ -569,7 +569,7 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: 140px;
   overflow: hidden;
   transition: var(--transition-2);
 }
@@ -2265,7 +2265,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 210px;
     margin-bottom: 30px;
   }
 
@@ -2282,7 +2282,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 120px;
+    width: 150px;
   }
 
   .info-content .name {
@@ -2799,7 +2799,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 150px;
+    width: 200px;
   }
 
   .info-content .name {
