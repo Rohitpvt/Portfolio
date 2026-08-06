@@ -1,12 +1,12 @@
 [
   {
-    "title": "AI-Destop-Assistant-with-GUI",
+    "title": "AI-Desktop-Assistant-with-GUI",
     "category": "AI Desktop Assistant",
     "date": "Sep 2023 - May 2024",
     "datetime": "2023-09-01",
     "description": "Developed a Python-based AI Assistant with AI Image Generation, Google Gemini integration, voice control, and gaming features, focusing on usability and performance optimization.",
     "image": "./images/desktop_assistant_mockup.png",
-    "link": "https://github.com/Rohitpvt/AI-Destop-Assistant-with-GUI",
+    "link": "https://github.com/Rohitpvt/AI-Desktop-Assistant-with-GUI",
     "tags": [
       "Python",
       "Google Gemini",
